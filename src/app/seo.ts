@@ -1,7 +1,24 @@
 import { BRAND } from './brand'
 
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://emaroautocare.pl'
+const DEFAULT_SITE_URL = 'https://emaroautocare.pl'
+
+function normalizeSiteUrl(raw?: string): string {
+  const value = raw?.trim()
+  if (!value) return DEFAULT_SITE_URL
+
+  const withProtocol = /^https?:\/\//i.test(value) ? value : `https://${value}`
+
+  try {
+    return new URL(withProtocol.replace(/\/$/, '')).origin
+  } catch {
+    return DEFAULT_SITE_URL
+  }
+}
+
+export const SITE_URL = normalizeSiteUrl(
+  process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined),
+)
 
 export const SITE_NAME = BRAND.name
 
