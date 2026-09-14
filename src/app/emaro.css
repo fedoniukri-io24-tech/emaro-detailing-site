@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.emaro {
+  --gold: #ffd60a;
+  --gold-light: #ffe566;
+  --gold-dark: #e6bc00;
+  --gold-soft: #fff3c4;
+  --gold-muted: #fff9db;
+  --gold-rgb: 255, 214, 10;
+  --gold-border: rgba(255, 214, 10, 0.45);
+  --gold-glow: rgba(255, 214, 10, 0.22);
+
+  --charcoal: #0a0a0a;
+  --black: #000000;
+  --dark-gray: #5a5a5a;
+  --light-gray: #f5f5f5;
+  --mist: var(--light-gray);
+  --stone: #6b6b6b;
+  --white: #ffffff;
+
+  --brand-primary: var(--gold);
+  --brand-primary-dark: var(--gold-dark);
+  --primary-accent: var(--gold);
+  --dark-accent: var(--gold-dark);
+
+  --section-px: 48px;
+  --section-py: 72px;
+  --section-gap: 40px;
+  --section-max: 1200px;
+
+  --heading-size: clamp(36px, 4.5vw, 56px);
+  --lead-size: 18px;
+
+  --page-pad: var(--section-px);
+  --page-pad-sm: 24px;
+  --radius: 22px;
+  --radius-sm: 14px;
+  --radius-pill: 999px;
+
+  --font-sans: 'Montserrat', 'Helvetica Neue', sans-serif;
+  --font-display: 'Montserrat', 'Helvetica Neue', sans-serif;
+
+  font-family: var(--font-sans);
+  color: var(--charcoal);
+  background: var(--white);
+}
+
+.emaro .section-intro {
+  text-align: left;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.emaro .section-heading {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--heading-size);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
+}
+
+.emaro .section-heading em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.emaro .section-lead {
+  font-size: var(--lead-size);
+  line-height: 1.65;
+  color: var(--dark-gray);
+  max-width: 48ch;
+}
+
+.emaro .section-lead strong {
+  font-weight: 600;
+  color: var(--gold);
+}
+
+@media (min-width: 981px) {
+  .emaro {
+    --section-px: 64px;
+    --section-py: 88px;
+    --section-max: 1320px;
+  }
+}
+
+@media (max-width: 900px) {
+  .emaro {
+    --section-px: 24px;
+    --section-py: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .emaro {
+    --section-px: 16px;
+    --section-py: 40px;
+  }
+}

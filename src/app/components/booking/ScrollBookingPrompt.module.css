@@ -1,0 +1,118 @@
+.dock {
+  position: fixed;
+  left: max(16px, env(safe-area-inset-left));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: min(320px, calc(100vw - 32px));
+  transform: translateY(calc(100% + 24px));
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
+}
+
+.dockVisible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--charcoal);
+  color: var(--gold-light);
+  border: 1px solid rgba(var(--gold-rgb), 0.28);
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(10, 10, 10, 0.14);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.whatsapp:hover {
+  background: #1a1a1a;
+  border-color: rgba(var(--gold-rgb), 0.42);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(10, 10, 10, 0.16);
+}
+
+.prompt {
+  position: relative;
+  width: 100%;
+  padding: 20px 18px 18px;
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--charcoal);
+  border: 1.5px solid rgba(10, 10, 10, 0.08);
+  box-shadow: 0 16px 48px rgba(10, 10, 10, 0.14);
+}
+
+.dismiss {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: var(--light-gray);
+  color: var(--stone);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dismiss:hover {
+  background: rgba(10, 10, 10, 0.08);
+  color: var(--charcoal);
+}
+
+.title {
+  margin: 0 28px 0 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--charcoal);
+}
+
+.text {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--dark-gray);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 16px;
+  padding: 0 18px;
+  border: 1px solid var(--gold-border);
+  border-radius: 999px;
+  background: var(--charcoal);
+  color: var(--white);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.btn:hover {
+  background: #1a1a1a;
+  border-color: rgba(var(--gold-rgb), 0.42);
+  transform: translateY(-1px);
+}

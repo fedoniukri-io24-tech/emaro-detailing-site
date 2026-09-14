@@ -1,0 +1,245 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  transform: scale(1.04);
+  animation: slowZoom 20s ease-out forwards;
+}
+
+.bgImage {
+  object-fit: cover;
+}
+
+.bgDesktop {
+  display: block;
+  object-position: center 42%;
+}
+
+.bgMobile {
+  display: none;
+  object-position: center 38%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.55) 42%, rgba(0, 0, 0, 0.15) 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, transparent 55%);
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 var(--section-px) 52px;
+}
+
+.copy {
+  margin-bottom: 44px;
+  animation: slideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.headline {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(36px, 5.2vw, 72px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: #fff;
+  max-width: 18ch;
+}
+
+.headline em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+.lead {
+  margin-top: 20px;
+  max-width: 48ch;
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 1.7vw, 20px);
+  font-weight: 500;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.bottomRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  animation: slideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 1.7vw, 20px);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.phone {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.phone:hover {
+  color: var(--gold-light);
+}
+
+.address {
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: auto;
+  max-width: 100%;
+  flex-shrink: 0;
+  border: none;
+  font: inherit;
+  text-align: left;
+  background: var(--white);
+  border-radius: 22px;
+  padding: 24px 32px;
+  min-width: 340px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.45);
+}
+
+.cardText { flex: 1; }
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 700;
+  color: var(--charcoal);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cardSub {
+  margin-top: 8px;
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.5vw, 17px);
+  font-weight: 500;
+  color: var(--dark-gray);
+  line-height: 1.5;
+}
+
+.cardArrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--charcoal);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.card:hover .cardArrow {
+  background: var(--gold);
+  color: var(--charcoal);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .bgDesktop { display: none; }
+  .bgMobile { display: block; }
+
+  .hero {
+    height: 100svh;
+    max-height: 100svh;
+    min-height: unset;
+  }
+
+  .body {
+    padding: 72px var(--section-px) max(56px, env(safe-area-inset-bottom));
+  }
+
+  .copy {
+    position: absolute;
+    left: var(--section-px);
+    right: var(--section-px);
+    top: 38%;
+    transform: translateY(-50%);
+    margin-bottom: 0;
+    pointer-events: none;
+  }
+
+  .headline {
+    font-size: clamp(30px, 8vw, 44px);
+    max-width: none;
+  }
+
+  .lead {
+    margin-top: 14px;
+    font-size: 15px;
+    max-width: none;
+  }
+
+  .contact {
+    font-size: 15px;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .card {
+    min-width: unset;
+    width: 100%;
+    padding: 20px 22px;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 700px) {
+  .copy {
+    top: 34%;
+  }
+
+  .headline {
+    font-size: clamp(26px, 7.5vw, 36px);
+  }
+
+  .lead {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}

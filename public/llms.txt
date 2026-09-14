@@ -1,0 +1,33 @@
+# Emaro Premium Auto Care
+
+> Mobilny detailing w Warszawie i okolicach — więcej niż czyste auto. Profesjonalna pielęgnacja samochodów osobowych, busów i ciężarówek.
+
+## Official pages
+
+- [Polski (PL)](https://emaroautocare.pl/pl): Strona główna — usługi, cennik, galeria, kontakt
+- [Українська (UA)](https://emaroautocare.pl/uk): Головна — послуги, ціни, галерея, контакти
+
+## Services
+
+- Kompleksowe czyszczenie wnętrza (od 250 zł — auto osobowe)
+- Czyszczenie foteli skórzanych (od 50 zł / fotel)
+- Czyszczenie foteli materiałowych (od 60 zł / fotel)
+- Mycie zewnętrzne (od 150 zł)
+- Detailing busów (od 290 zł wnętrze)
+- Detailing ciężarówek (745 zł kabina, 1105 zł kabina + naczepa)
+
+## Contact
+
+- Phone: +48 577 123 029
+- Email: emaroautocare@gmail.com
+- Area: Warszawa i okolice, Polska
+
+## Languages
+
+- Polish (pl): https://emaroautocare.pl/pl
+- Ukrainian (uk): https://emaroautocare.pl/uk
+
+## SEO
+
+- Sitemap: https://emaroautocare.pl/sitemap.xml
+- Robots: https://emaroautocare.pl/robots.txt

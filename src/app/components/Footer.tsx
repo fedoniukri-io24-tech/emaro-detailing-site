@@ -1,0 +1,79 @@
+'use client'
+
+import Image from 'next/image'
+import Link from 'next/link'
+import { BookingTrigger } from './booking/BookingProvider'
+import { BRAND } from '../brand'
+import { useDictionary, useLocale } from '../../i18n/LocaleProvider'
+import { NAV_SECTIONS, localePath } from '../../i18n/paths'
+import styles from './Footer.module.css'
+
+export default function Footer() {
+  const dict = useDictionary()
+  const locale = useLocale()
+
+  return (
+    <footer id="site-footer" className={styles.footer}>
+      <div className={styles.content}>
+        <div className={styles.top}>
+          <div className={styles.brandBlock}>
+            <Link href={localePath(locale)} className={styles.logoLink} aria-label={BRAND.name}>
+              <Image
+                src={BRAND.logo}
+                alt=""
+                width={140}
+                height={56}
+                className={styles.logo}
+              />
+            </Link>
+            <div className={styles.contacts}>
+              <h3 className={styles.infoLabel}>{dict.footer.contactsTitle}</h3>
+              <p className={styles.brandName}>{BRAND.name}</p>
+              <p className={styles.infoValue}>{BRAND.address}</p>
+              <p className={styles.infoValue}>{BRAND.city}</p>
+              <a href={`tel:${BRAND.phone.replace(/\s/g, '')}`} className={styles.infoLink}>
+                {BRAND.phone}
+              </a>
+              <a href={`mailto:${BRAND.email}`} className={styles.infoLink}>
+                {BRAND.email}
+              </a>
+            </div>
+            <BookingTrigger className={styles.cta}>
+              {dict.nav.cta}
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M2 14 L14 2 M6 2 H14 V10" />
+              </svg>
+            </BookingTrigger>
+          </div>
+
+          <div className={styles.infoItem}>
+            <h3 className={styles.infoLabel}>{dict.footer.navLabel}</h3>
+            <nav className={styles.footerNav} aria-label={dict.footer.navLabel}>
+              {dict.footer.links.map((label, i) => (
+                <a key={label} href={localePath(locale, NAV_SECTIONS[i]?.anchor ?? '#kontakt')}>
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          <div className={styles.infoItem}>
+            <h3 className={styles.infoLabel}>{dict.footer.social}</h3>
+            {BRAND.instagram ? (
+              <a href={BRAND.instagram} className={styles.infoLink} target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+            ) : (
+              <p className={styles.infoMuted}>{dict.footer.instagramSoon}</p>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.bottom}>
+          <span>© {new Date().getFullYear()} {BRAND.name}. {dict.footer.rights}</span>
+          <a href="#">{dict.footer.privacy}</a>
+        </div>
+      </div>
+    </footer>
+  )
+}
