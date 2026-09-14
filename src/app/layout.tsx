@@ -1,9 +1,16 @@
 import type { Metadata, Viewport } from 'next'
+import { Montserrat } from 'next/font/google'
 import { headers } from 'next/headers'
 import './globals.css'
 import './emaro.css'
 import { isLocale, localeHtmlLang, type Locale } from '../i18n/config'
 import { absoluteUrl, OG_IMAGE, OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH, SITE_NAME, SITE_URL } from './seo'
+
+const montserrat = Montserrat({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -84,15 +91,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang={htmlLang}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="emaro">
+      <body className={`emaro ${montserrat.className}`}>
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
