@@ -247,15 +247,17 @@ nav: {
       promptTitle: 'Umów konsultację',
       promptText: 'Zostaw imię i numer — oddzwonimy i doradzimy najlepszą usługę.',
       promptBtn: 'Zapisz się',
-      modalTitle: 'Zapisz się na konsultację',
-      modalLead: 'Podaj imię i numer telefonu — skontaktujemy się wkrótce.',
-      name: 'Imię',
-      namePh: 'Twoje imię',
-      phone: 'Telefon',
-      phonePh: '+48',
-      consent: 'Wysyłając formularz, zgadzasz się na przetwarzanie danych osobowych',
-      submit: 'Wyślij zgłoszenie',
+      modalTitle: 'Skontaktuj się z nami',
+      namePh: 'imię',
+      phonePh: 'telefon',
+      emailPh: 'e-mail',
+      consent: 'Wysyłając formularz, zgadzasz się na przetwarzanie danych osobowych.',
+      submit: 'Wyślij',
       submitting: 'Wysyłanie…',
+      or: 'Albo',
+      socialLead: 'Napisz do nas na',
+      telegram: 'Telegram',
+      whatsapp: 'WhatsApp',
       successTitle: 'Dziękujemy!',
       successText: 'Skontaktujemy się z Tobą wkrótce.',
       close: 'Zamknij',
@@ -298,8 +300,87 @@ nav: {
       links: ['O nas', 'Usługi', 'Ceny', 'Galeria', 'Opinie', 'Kontakt'],
       contactsTitle: 'Kontakt',
       social: 'Social media',
-      instagramSoon: 'Instagram — wkrótce',
+      instagramLabel: '@emaro.premium',
       rights: 'Wszelkie prawa zastrzeżone.',
       privacy: 'Polityka prywatności',
+    },
+    privacy: {
+      metaTitle: 'Polityka prywatności',
+      metaDescription:
+        'Polityka prywatności Emaro Premium Auto Care — jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe.',
+      title: 'Polityka prywatności',
+      updated: 'Ostatnia aktualizacja: 15 września 2026 r.',
+      back: 'Strona główna',
+      sections: [
+        {
+          title: '1. Kto przetwarza Twoje dane',
+          paragraphs: [
+            'Administratorem danych osobowych jest Emaro Premium Auto Care (mobilny detailing, Warszawa i okolice).',
+            'Kontakt z administratorem: emaroautocare@gmail.com, tel. +48 577 123 029.',
+          ],
+        },
+        {
+          title: '2. Jakie dane zbieramy',
+          paragraphs: [
+            'Poprzez formularz zapisu lub kontaktowy na stronie możesz podać: imię, numer telefonu, wybraną usługę oraz komentarz.',
+            'Podczas wizyty na stronie dane techniczne (adres IP, typ przeglądarki, czas wizyty) mogą być przetwarzane automatycznie przez dostawcę hostingu — wyłącznie w zakresie niezbędnym do działania serwisu.',
+          ],
+        },
+        {
+          title: '3. W jakim celu wykorzystujemy dane',
+          paragraphs: [
+            'Aby skontaktować się z Tobą, potwierdzić rezerwację detailingu, ustalić szczegóły zlecenia i wykonać usługę.',
+            'Aby odpowiedzieć na zapytania e-mailem lub telefonicznie.',
+          ],
+        },
+        {
+          title: '4. Podstawa prawna przetwarzania',
+          paragraphs: [
+            'Przetwarzanie danych z formularza odbywa się na podstawie Twojej zgody (art. 6 ust. 1 lit. a RODO) oraz w celu wykonania umowy / działań przed zawarciem umowy (art. 6 ust. 1 lit. b RODO).',
+            'Dane techniczne hostingu — na podstawie prawnie uzasadnionego interesu zapewnienia bezpieczeństwa i prawidłowego działania strony (art. 6 ust. 1 lit. f RODO).',
+          ],
+        },
+        {
+          title: '5. Jak długo przechowujemy dane',
+          paragraphs: [
+            'Dane z formularzy przechowujemy do 12 miesięcy po zakończeniu korespondencji lub wykonaniu usługi — w zależności od tego, co nastąpi później, o ile dłuższy okres nie wynika z przepisów.',
+            'Po tym czasie dane są usuwane lub anonimizowane.',
+          ],
+        },
+        {
+          title: '6. Komu możemy przekazać dane',
+          paragraphs: [
+            'Dane nie są sprzedawane podmiotom trzecim. Możemy korzystać z dostawców hostingu, poczty i CRM wyłącznie w celu obsługi zapytania — na podstawie umów zapewniających ochronę danych.',
+          ],
+        },
+        {
+          title: '7. Twoje prawa',
+          paragraphs: [
+            'Masz prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych oraz wniesienia sprzeciwu.',
+            'Możesz wycofać zgodę w dowolnym momencie — nie wpływa to na zgodność z prawem przetwarzania przed wycofaniem.',
+            'Skargę można złożyć do Prezesa Urzędu Ochrony Danych Osobowych (PUODO), ul. Stawki 2, 00-193 Warszawa.',
+          ],
+        },
+        {
+          title: '8. Pliki cookies',
+          paragraphs: [
+            'Strona może używać niezbędnych plików cookies do prawidłowego działania (np. ustawienia języka).',
+            'W przypadku wdrożenia narzędzi analitycznych lub marketingowych zaktualizujemy niniejszą politykę i — w razie potrzeby — poprosimy o zgodę.',
+          ],
+        },
+        {
+          title: '9. Instagram',
+          paragraphs: [
+            'Prowadzimy profil na Instagramie: @emaro.premium. Po przejściu na Instagram obowiązują zasady Meta Platforms Ireland Limited.',
+          ],
+        },
+        {
+          title: '10. Zmiany polityki',
+          paragraphs: [
+            'Możemy aktualizować niniejszą politykę. Aktualna wersja jest zawsze dostępna na tej stronie.',
+            'Pytania dotyczące prywatności: emaroautocare@gmail.com.',
+          ],
+        },
+      ],
     },
 }

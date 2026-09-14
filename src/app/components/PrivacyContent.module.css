@@ -1,0 +1,65 @@
+.page {
+  padding: calc(var(--section-py) + 24px) var(--section-px) var(--section-py);
+  background: var(--white);
+}
+
+.inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-gray);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: var(--charcoal);
+}
+
+.title {
+  margin: 0 0 10px;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
+}
+
+.updated {
+  margin: 0 0 36px;
+  font-size: 14px;
+  color: var(--stone);
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sectionTitle {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--charcoal);
+}
+
+.sectionText {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--dark-gray);
+}
+
+.sectionText:last-child {
+  margin-bottom: 0;
+}

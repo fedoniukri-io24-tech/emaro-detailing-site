@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { BookingTrigger } from './booking/BookingProvider'
+import InstagramIcon from './InstagramIcon'
 import { BRAND } from '../brand'
 import { useDictionary, useLocale } from '../../i18n/LocaleProvider'
 import { NAV_SECTIONS, localePath } from '../../i18n/paths'
@@ -59,19 +60,24 @@ export default function Footer() {
 
           <div className={styles.infoItem}>
             <h3 className={styles.infoLabel}>{dict.footer.social}</h3>
-            {BRAND.instagram ? (
-              <a href={BRAND.instagram} className={styles.infoLink} target="_blank" rel="noopener noreferrer">
-                Instagram
-              </a>
-            ) : (
-              <p className={styles.infoMuted}>{dict.footer.instagramSoon}</p>
-            )}
+            <a
+              href={BRAND.instagram}
+              className={styles.socialLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram @emaro.premium"
+            >
+              <InstagramIcon size={24} />
+              <span>{dict.footer.instagramLabel}</span>
+            </a>
           </div>
         </div>
 
         <div className={styles.bottom}>
           <span>© {new Date().getFullYear()} {BRAND.name}. {dict.footer.rights}</span>
-          <a href="#">{dict.footer.privacy}</a>
+          <Link href={localePath(locale, '/privacy')} className={styles.privacyLink}>
+            {dict.footer.privacy}
+          </Link>
         </div>
       </div>
     </footer>

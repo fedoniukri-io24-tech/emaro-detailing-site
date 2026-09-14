@@ -98,14 +98,16 @@ export type Dictionary = {
     promptText: string
     promptBtn: string
     modalTitle: string
-    modalLead: string
-    name: string
     namePh: string
-    phone: string
     phonePh: string
+    emailPh: string
     consent: string
     submit: string
     submitting: string
+    or: string
+    socialLead: string
+    telegram: string
+    whatsapp: string
     successTitle: string
     successText: string
     close: string
@@ -138,8 +140,19 @@ export type Dictionary = {
     links: string[]
     contactsTitle: string
     social: string
-    instagramSoon: string
+    instagramLabel: string
     rights: string
     privacy: string
+  }
+  privacy: {
+    metaTitle: string
+    metaDescription: string
+    title: string
+    updated: string
+    back: string
+    sections: Array<{
+      title: string
+      paragraphs: string[]
+    }>
   }
 }
