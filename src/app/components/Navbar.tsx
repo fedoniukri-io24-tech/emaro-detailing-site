@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { BRAND } from '../brand'
 import { BookingTrigger } from './booking/BookingProvider'
 import LanguageSwitcher from './LanguageSwitcher'
+import { useBodyScrollLock } from '../lib/useBodyScrollLock'
 import { useDictionary, useLocale } from '../../i18n/LocaleProvider'
 import { NAV_SECTIONS, localePath } from '../../i18n/paths'
 import styles from './Navbar.module.css'
@@ -25,10 +26,7 @@ export default function Navbar({ transparent = false }: { transparent?: boolean 
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
+  useBodyScrollLock(menuOpen)
 
   const onHero = transparent && !scrolled
 

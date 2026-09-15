@@ -11,6 +11,19 @@ body {
   max-width: 100%;
 }
 
+html.scroll-locked,
+body.scroll-locked {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+
+body.scroll-locked {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
 .skip-link {
   position: absolute;
   top: -100%;

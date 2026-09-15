@@ -10,6 +10,7 @@ import {
 } from 'react'
 import BookingModal from './BookingModal'
 import ScrollBookingPrompt from './ScrollBookingPrompt'
+import { useBodyScrollLock } from '../../lib/useBodyScrollLock'
 
 type BookingContextValue = {
   openBookingModal: () => void
@@ -58,6 +59,8 @@ export function BookingProvider({ children }: { children: ReactNode }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [promptDismissed])
 
+  useBodyScrollLock(isOpen)
+
   useEffect(() => {
     if (!isOpen) return
 
@@ -65,14 +68,8 @@ export function BookingProvider({ children }: { children: ReactNode }) {
       if (event.key === 'Escape') closeBookingModal()
     }
 
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
     window.addEventListener('keydown', onKeyDown)
-
-    return () => {
-      document.body.style.overflow = prevOverflow
-      window.removeEventListener('keydown', onKeyDown)
-    }
+    return () => window.removeEventListener('keydown', onKeyDown)
   }, [isOpen, closeBookingModal])
 
   return (

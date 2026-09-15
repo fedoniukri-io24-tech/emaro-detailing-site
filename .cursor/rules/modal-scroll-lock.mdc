@@ -1,0 +1,26 @@
+---
+description: Always lock page scroll when any modal, lightbox, or overlay is open
+alwaysApply: true
+---
+
+# Body scroll lock for modals
+
+Whenever a modal, lightbox, drawer, or fullscreen overlay is open, the page behind it must not scroll.
+
+## Required approach
+
+- Use the shared hook `useBodyScrollLock(locked)` from `src/app/lib/useBodyScrollLock.ts`.
+- Call it with `true` while the overlay is visible (booking modal, gallery lightbox, mobile menu, future modals).
+- Do **not** set `document.body.style.overflow` ad hoc in components — that breaks nested overlays and iOS Safari.
+
+## Behavior
+
+- Locks both `html` and `body` via the `.scroll-locked` class in `globals.css`.
+- Uses `position: fixed` on `body` and restores scroll position on unlock.
+- Supports nested locks via an internal counter (e.g. menu + modal).
+
+## Checklist for new overlays
+
+1. Import `useBodyScrollLock`.
+2. Pass the open state: `useBodyScrollLock(isOpen)`.
+3. Verify background page cannot scroll on desktop and mobile.

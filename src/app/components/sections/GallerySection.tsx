@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useCallback, useEffect, useState } from 'react'
 import { GALLERY_IMAGES } from '../../data/siteContent'
+import { useBodyScrollLock } from '../../lib/useBodyScrollLock'
 import { useDictionary } from '../../../i18n/LocaleProvider'
 import { SectionHeading } from './SectionHeading'
 import styles from './sections.module.css'
@@ -15,6 +16,8 @@ export default function GallerySection() {
   const activeItem = activeIndex >= 0 ? GALLERY_IMAGES[activeIndex] : null
 
   const closeLightbox = useCallback(() => setActiveId(null), [])
+
+  useBodyScrollLock(Boolean(activeItem))
 
   const showPrev = useCallback(() => {
     if (activeIndex <= 0) {
@@ -41,14 +44,8 @@ export default function GallerySection() {
       if (event.key === 'ArrowRight') showNext()
     }
 
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
     window.addEventListener('keydown', onKeyDown)
-
-    return () => {
-      document.body.style.overflow = prevOverflow
-      window.removeEventListener('keydown', onKeyDown)
-    }
+    return () => window.removeEventListener('keydown', onKeyDown)
   }, [activeItem, closeLightbox, showPrev, showNext])
 
   return (
