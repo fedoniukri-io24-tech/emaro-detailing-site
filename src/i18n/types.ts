@@ -143,6 +143,7 @@ export type Dictionary = {
     instagramLabel: string
     rights: string
     privacy: string
+    developedBy: string
   }
   privacy: {
     metaTitle: string

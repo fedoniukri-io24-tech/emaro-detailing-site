@@ -176,15 +176,30 @@
 
 .bottom span,
 .bottom a,
-.privacyLink {
+.privacyLink,
+.credit,
+.creditLink {
   font-size: 12px;
   color: var(--stone);
   text-decoration: none;
   transition: color 0.2s;
 }
 
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
 .bottom a:hover,
-.privacyLink:hover {
+.privacyLink:hover,
+.creditLink:hover {
+  color: var(--charcoal);
+}
+
+.creditLink {
+  font-weight: 600;
   color: var(--charcoal);
 }
 

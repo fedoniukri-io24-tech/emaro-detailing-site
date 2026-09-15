@@ -249,21 +249,26 @@
 }
 
 .servicesNotes {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
   margin-top: 8px;
 }
 
 .servicesNote {
   margin: 0;
-  padding: 18px 22px;
-  border-radius: 16px;
-  background: var(--light-gray);
-  border: 1.5px solid rgba(10, 10, 10, 0.06);
+  padding: 16px 22px;
+  border-radius: 999px;
+  background: var(--gold-muted);
+  border: 1.5px solid rgba(var(--gold-rgb), 0.28);
   font-size: 14px;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--dark-gray);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .servicesNote {
+    border-radius: 20px;
+    text-align: left;
+  }
 }
 
 .categoryBlock {

@@ -16,7 +16,7 @@ export const pl: Dictionary = {
     ],
     ogImageAlt: 'Emaro Premium Auto Care — mobilny detailing w Warszawie',
   },
-  notFound: {
+    notFound: {
     metaTitle: '404 — Strona nie znaleziona | Emaro Premium Auto Care',
     metaDescription: 'Strona, której szukasz, nie istnieje. Wróć na stronę główną Emaro Premium Auto Care.',
     code: '404',
@@ -40,7 +40,7 @@ nav: {
       sloganEm: 'więcej niż czyste auto',
       mobileLabel: 'Mobilny detailing',
       mobileText: 'Przyjeżdżamy do Ciebie w Warszawie i okolicach — dom, biuro lub parking. Profesjonalna chemia detailingowa i dbałość o każdy detal.',
-      ctaTitle: 'Zamów detailing',
+      ctaTitle: 'Podetailujemy Twoje auto?',
       ctaSub: 'Przyjedziemy tam, gdzie Ci wygodnie',
     },
     about: {
@@ -53,7 +53,7 @@ nav: {
       ],
       teamImageAlt: 'Zespół Emaro Premium Auto Care przy pracy',
       quote: 'Bo dla nas detailing to nie tylko czyszczenie samochodu. To dbałość o każdy detal.',
-      ctaTitle: 'Mobilny detailing premium',
+      ctaTitle: 'Mobilny detailing',
       ctaText:
         'Przyjedziemy tam, gdzie Ci wygodnie — dom, biuro lub parking. Profesjonalna chemia detailingowa, dbałość o każdy detal i efekt, który widać od razu.',
       ctaBtn: 'Zamów detailing',
@@ -71,8 +71,7 @@ nav: {
         trucks: 'Samochody ciężarowe',
       },
       notes: [
-        'Cena prania i czyszczenia wnętrza ustalana jest indywidualnie i zależy m.in. od rodzaju pojazdu (bus osobowy lub dostawczy), liczby foteli wymagających prania oraz stopnia zabrudzenia.',
-        'W przypadku większej liczby naczep cena ustalana jest indywidualnie w zależności od zakresu oraz ilości wykonywanych prac.',
+        'Cena prania i czyszczenia wnętrza ustalana jest indywidualnie i zależy m.in. od rodzaju pojazdu (bus osobowy lub dostawczy), liczby foteli wymagających prania oraz stopnia zabrudzenia. Przy większej liczbie naczep cena również ustalana jest indywidualnie — w zależności od zakresu i ilości prac.',
       ],
       items: {
         'cars-interior': {
@@ -130,7 +129,7 @@ nav: {
       note: 'Dokładną cenę podamy po obejrzeniu auta — zależy od rozmiaru i stopnia zabrudzenia.',
       book: 'Zapisz się',
       bentoLead:
-        'Profesjonalny mobilny detailing — przyjedziemy tam, gdzie Ci wygodnie: dom, biuro lub parking.',
+        'Przyjedziemy tam, gdzie Ci wygodnie: dom, biuro lub parking.',
       bentoAccentTitle: 'Mobilny detailing',
       bentoAccentSub: 'Warszawa i okolice',
       bentoWideTitle: 'Troska o każdy detal',
@@ -188,7 +187,7 @@ nav: {
       titleEm: 'przed / po',
       before: 'Przed',
       after: 'Po',
-      placeholder: 'Przesuń suwak, aby zobaczyć efekt przed i po.',
+      placeholder: 'Przesuń suwak, aby porównać efekt przed i po.',
       items: {
         'ba-exterior': { title: 'Mycie zewnętrzne' },
         'ba-interior': { title: 'Czyszczenie wnętrza' },
@@ -199,7 +198,7 @@ nav: {
     gallery: {
       titleBefore: ' ',
       titleEm: 'Galeria',
-      placeholder: 'Efekty naszej pracy — detailing wnętrza, tapicerki i karoserii.',
+      placeholder: 'Efekty naszej pracy — wnętrze, tapicerka i nadwozie.',
       alts: {
         g1: 'Emaro Premium Auto Care — mobilny detailing',
         g2: 'Mycie zewnętrzne z pianą aktywną',
@@ -215,7 +214,7 @@ nav: {
     reviews: {
       titleBefore: 'Opinie ',
       titleEm: 'klientów',
-      placeholder: 'Opinie naszych klientów będziemy dodawać na bieżąco.',
+      placeholder: 'Co mówią klienci po detailingu.',
       items: {
         r1: {
           name: 'Marek, Warszawa',
@@ -244,10 +243,10 @@ nav: {
       },
     },
     booking: {
-      promptTitle: 'Umów konsultację',
-      promptText: 'Zostaw imię i numer — oddzwonimy i doradzimy najlepszą usługę.',
+      promptTitle: 'Podetailujemy Twoje auto?',
+      promptText: 'Zostaw imię i numer — oddzwonimy i dobierzemy usługę.',
       promptBtn: 'Zapisz się',
-      modalTitle: 'Skontaktuj się z nami',
+      modalTitle: 'Podetailujemy Twoje auto?',
       namePh: 'imię',
       phonePh: 'telefon',
       emailPh: 'e-mail',
@@ -263,13 +262,13 @@ nav: {
       close: 'Zamknij',
     },
     contact: {
-      heading: 'Skontaktuj się',
-      headingEm: 'z nami',
-      lead: 'Emaro Premium Auto Care — mobilny detailing w Warszawie i okolicach. Zadzwoń, napisz lub wypełnij formularz.',
+      heading: 'Podetailujemy',
+      headingEm: 'Twoje auto?',
+      lead: 'Zostaw zgłoszenie albo napisz — podpowiemy, czego potrzebujesz, i przyjedziemy tam, gdzie Ci wygodnie.',
       visualLabel: 'Emaro Premium Auto Care',
       visualText: 'Warszawa i okolice',
       visualAlt: 'Emaro — mobilny detailing w Warszawie',
-      formTitle: 'Zapisz się na usługę',
+      formTitle: 'Zostaw zgłoszenie',
       name: 'Imię',
       namePh: 'Twoje imię',
       phone: 'Telefon',
@@ -277,7 +276,7 @@ nav: {
       service: 'Usługa',
       servicePh: 'Wybierz usługę',
       comment: 'Komentarz',
-      commentPh: 'Marka auta, adres, preferowana data...',
+      commentPh: 'Marka auta, adres, preferowana data…',
       consent: 'Wysyłając formularz, zgadzasz się na przetwarzanie danych osobowych',
       submit: 'Wyślij zgłoszenie',
       submitting: 'Wysyłanie…',
@@ -303,6 +302,7 @@ nav: {
       instagramLabel: '@emaro.premium',
       rights: 'Wszelkie prawa zastrzeżone.',
       privacy: 'Polityka prywatności',
+      developedBy: 'Opracowane przez',
     },
     privacy: {
       metaTitle: 'Polityka prywatności',

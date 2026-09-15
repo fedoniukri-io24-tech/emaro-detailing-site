@@ -159,11 +159,7 @@ export default function ServicesSection() {
         })}
 
         <div className={styles.servicesNotes}>
-          {dict.services.notes.map((note) => (
-            <p key={note.slice(0, 32)} className={styles.servicesNote}>
-              {note}
-            </p>
-          ))}
+          <p className={styles.servicesNote}>{dict.services.notes.join(' ')}</p>
         </div>
       </div>
     </section>

@@ -75,9 +75,22 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <span>© {new Date().getFullYear()} {BRAND.name}. {dict.footer.rights}</span>
-          <Link href={localePath(locale, '/privacy')} className={styles.privacyLink}>
-            {dict.footer.privacy}
-          </Link>
+          <div className={styles.bottomLinks}>
+            <Link href={localePath(locale, '/privacy')} className={styles.privacyLink}>
+              {dict.footer.privacy}
+            </Link>
+            <span className={styles.credit}>
+              {dict.footer.developedBy}{' '}
+              <a
+                href="https://telebots.site/en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.creditLink}
+              >
+                TeleBots
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </footer>
