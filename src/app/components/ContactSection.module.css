@@ -23,17 +23,24 @@
 
 .heading {
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: var(--font-weight-heading);
   font-size: var(--heading-size);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  line-height: 1.2;
+  letter-spacing: var(--letter-tight);
   color: var(--charcoal);
 }
 
 .heading em {
   font-style: normal;
-  font-weight: 600;
-  color: var(--gold);
+  font-weight: var(--font-weight-heading);
+  color: var(--charcoal);
+  background: var(--gold);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.06em 0.14em;
+  margin: 0 -0.04em;
+  border-radius: var(--radius-xs);
+  box-shadow: 0 0 0 0.06em var(--gold);
 }
 
 .lead {
@@ -48,10 +55,10 @@
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 0;
-  border-radius: 28px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--white);
-  box-shadow: 0 28px 80px rgba(10, 10, 10, 0.14);
+  box-shadow: var(--shadow-elevated);
 }
 
 .visual {
@@ -247,18 +254,19 @@
   justify-content: center;
   gap: 12px;
   margin-top: 6px;
+  min-height: var(--btn-height);
   background: var(--charcoal);
   color: var(--white);
   border: 1px solid var(--gold-border);
   border-radius: var(--radius-pill);
-  padding: 18px 36px;
+  padding: 0 var(--btn-pad-x);
   font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: var(--btn-font);
+  font-weight: var(--btn-weight);
+  letter-spacing: var(--btn-tracking);
   cursor: pointer;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s, border-color 0.2s;
-  box-shadow: 0 6px 24px rgba(10, 10, 10, 0.1);
+  box-shadow: var(--shadow-soft);
 }
 
 .submit:hover:not(:disabled) {
@@ -284,7 +292,7 @@
 
 .success h3 {
   font-size: 30px;
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   color: var(--charcoal);
 }
 
@@ -323,11 +331,11 @@
   }
 
   .heading {
-    font-size: clamp(34px, 10vw, 48px);
+    font-size: var(--heading-size);
   }
 
   .panel {
-    border-radius: 22px;
+    border-radius: var(--radius-md);
   }
 
   .visual {

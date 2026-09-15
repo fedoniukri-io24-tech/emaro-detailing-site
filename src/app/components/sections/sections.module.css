@@ -53,10 +53,10 @@
   width: 100%;
   height: 100%;
   min-height: 0;
-  border-radius: 28px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--light-gray);
-  box-shadow: 0 24px 64px rgba(10, 10, 10, 0.12);
+  box-shadow: var(--shadow-elevated);
 }
 
 .aboutImage {
@@ -66,11 +66,11 @@
 .aboutCtaCard {
   position: relative;
   margin-top: clamp(12px, 2vw, 24px);
-  border-radius: 28px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--gold);
   border: 1.5px solid rgba(var(--gold-rgb), 0.5);
-  box-shadow: 0 20px 56px rgba(255, 214, 10, 0.22);
+  box-shadow: var(--shadow-card);
 }
 
 .aboutCtaCard::before {
@@ -108,8 +108,8 @@
 
 .aboutCtaTitle {
   margin: 0;
-  font-size: clamp(28px, 3.4vw, 42px);
-  font-weight: 800;
+  font-size: var(--heading-card);
+  font-weight: var(--font-weight-heading);
   line-height: 1.08;
   letter-spacing: -0.03em;
   color: var(--charcoal);
@@ -129,19 +129,20 @@
   align-items: center;
   gap: 14px;
   margin-top: 4px;
-  padding: 6px 6px 6px 22px;
+  min-height: var(--btn-height);
+  padding: 6px 6px 6px var(--btn-pad-x);
   border: none;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--charcoal);
   color: var(--white);
   font: inherit;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  font-size: var(--btn-font);
+  font-weight: var(--btn-weight);
+  letter-spacing: var(--btn-tracking);
   text-transform: uppercase;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-  box-shadow: 0 10px 28px rgba(10, 10, 10, 0.14);
+  box-shadow: var(--shadow-soft);
 }
 
 .aboutCtaBtnLabel {
@@ -255,7 +256,7 @@
 .servicesNote {
   margin: 0;
   padding: 16px 22px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--gold-muted);
   border: 1.5px solid rgba(var(--gold-rgb), 0.28);
   font-size: 14px;
@@ -266,7 +267,7 @@
 
 @media (max-width: 768px) {
   .servicesNote {
-    border-radius: 20px;
+    border-radius: var(--radius-md);
     text-align: left;
   }
 }
@@ -280,7 +281,7 @@
 
 .categoryTitle {
   margin: 0;
-  font-size: clamp(20px, 2vw, 24px);
+  font-size: var(--heading-sub);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--charcoal);
@@ -364,7 +365,7 @@
   width: min(360px, 82vw);
   min-height: 540px;
   overflow: visible;
-  border-radius: 32px;
+  border-radius: var(--radius-lg);
   scroll-snap-align: start;
   isolation: isolate;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -391,12 +392,12 @@
   position: absolute;
   z-index: 6;
   padding: 10px 16px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.96);
   border: 1.5px solid rgba(var(--gold-rgb), 0.28);
   color: var(--charcoal);
   font-size: clamp(15px, 1.5vw, 19px);
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   line-height: 1.15;
   letter-spacing: -0.03em;
   white-space: nowrap;
@@ -469,8 +470,8 @@
 
 .serviceTitle {
   margin: 0;
-  font-size: clamp(22px, 2.2vw, 30px);
-  font-weight: 800;
+  font-size: var(--heading-card);
+  font-weight: var(--font-weight-heading);
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -485,7 +486,7 @@
 .serviceNote {
   margin: 0;
   padding: 10px 12px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   font-size: 12px;
   line-height: 1.55;
   max-width: 100%;
@@ -497,13 +498,14 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 46px;
+  min-height: var(--btn-height-sm);
   padding: 0 20px;
   border: none;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font: inherit;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: var(--btn-font);
+  font-weight: var(--btn-weight);
+  letter-spacing: var(--btn-tracking);
   cursor: pointer;
   transition: transform 0.2s, background 0.2s, color 0.2s;
 }
@@ -678,7 +680,7 @@
     flex-basis: min(300px, 84vw);
     width: min(300px, 84vw);
     min-height: 500px;
-    border-radius: 28px;
+    border-radius: var(--radius-lg);
   }
 
   .servicePriceTag {
@@ -746,21 +748,35 @@
 }
 
 .pricesBentoTitleLine {
-  font-size: clamp(34px, 4.8vw, 58px);
-  font-weight: 800;
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-size: var(--heading-size);
+  font-weight: var(--font-weight-heading);
+  line-height: 1.2;
+  letter-spacing: var(--letter-tight);
   text-transform: uppercase;
   color: var(--charcoal);
 }
 
+.pricesBentoTitleLine em,
 .pricesBentoTitleAccent {
-  font-size: clamp(34px, 4.8vw, 58px);
-  font-weight: 800;
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-style: normal;
+  font-weight: var(--font-weight-heading);
+  color: var(--charcoal);
+  background: var(--gold);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.04em 0.12em;
+  margin: 0 -0.04em;
+  border-radius: var(--radius-xs);
+  box-shadow: 0 0 0 0.05em var(--gold);
+}
+
+.pricesBentoTitleAccent {
+  display: inline-block;
+  width: fit-content;
+  font-size: var(--heading-size);
+  line-height: 1.2;
+  letter-spacing: var(--letter-tight);
   text-transform: uppercase;
-  color: var(--gold);
 }
 
 .pricesBentoLeadWrap {
@@ -777,7 +793,7 @@
   font-size: 28px;
   font-weight: 300;
   line-height: 1;
-  color: var(--gold);
+  color: var(--charcoal);
 }
 
 .pricesBentoLead {
@@ -799,7 +815,7 @@
 .bentoCard {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: var(--radius-lg);
   background: var(--light-gray);
   border: 1px solid rgba(10, 10, 10, 0.06);
   min-height: 0;
@@ -866,7 +882,7 @@
   z-index: 2;
   width: 52%;
   height: 58%;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
   border: 2px solid rgba(255, 255, 255, 0.14);
@@ -923,7 +939,7 @@
   align-items: center;
   max-width: calc(100% - 52px);
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--gold-border);
   font-size: 11px;
@@ -990,8 +1006,8 @@
 
 .bentoCardTitle {
   margin: 0;
-  font-size: clamp(22px, 2.4vw, 30px);
-  font-weight: 800;
+  font-size: var(--heading-card);
+  font-weight: var(--font-weight-heading);
   line-height: 1.12;
   letter-spacing: -0.03em;
   color: #fff;
@@ -1026,11 +1042,11 @@
   align-self: flex-start;
   margin-top: 2px;
   padding: 9px 15px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.96);
   border: 1.5px solid rgba(var(--gold-rgb), 0.28);
   font-size: clamp(15px, 1.45vw, 19px);
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--charcoal);
@@ -1089,7 +1105,7 @@
 .bentoAccentTitle {
   margin: 0;
   font-size: 18px;
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   line-height: 1.2;
   color: var(--charcoal);
 }
@@ -1125,8 +1141,8 @@
 
 .bentoWideTitle {
   margin: 0;
-  font-size: clamp(22px, 2.5vw, 30px);
-  font-weight: 800;
+  font-size: var(--heading-card);
+  font-weight: var(--font-weight-heading);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #fff;
@@ -1140,7 +1156,7 @@
   min-height: 40px;
   padding: 0 18px;
   border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
   font: inherit;
@@ -1175,8 +1191,8 @@
 
 .fleetCategoryTitle {
   margin: 0;
-  font-size: clamp(24px, 2.8vw, 34px);
-  font-weight: 800;
+  font-size: var(--heading-sub);
+  font-weight: var(--font-weight-heading);
   line-height: 1.05;
   letter-spacing: -0.03em;
   color: var(--charcoal);
@@ -1192,7 +1208,7 @@
   display: grid;
   grid-template-columns: minmax(160px, 240px) minmax(0, 1fr);
   align-items: stretch;
-  border-radius: 22px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--white);
   border: 1px solid rgba(10, 10, 10, 0.08);
@@ -1231,8 +1247,8 @@
 
 .fleetRowTitle {
   margin: 0;
-  font-size: clamp(19px, 2vw, 24px);
-  font-weight: 800;
+  font-size: var(--heading-sub);
+  font-weight: var(--font-weight-heading);
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--charcoal);
@@ -1258,10 +1274,10 @@
   display: inline-flex;
   align-items: center;
   padding: 8px 14px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background: var(--gold);
   font-size: clamp(16px, 1.6vw, 20px);
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   letter-spacing: -0.03em;
   color: var(--charcoal);
   white-space: nowrap;
@@ -1271,20 +1287,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 0 18px;
+  min-height: var(--btn-height-sm);
+  padding: 0 20px;
   border: 1.5px solid var(--charcoal);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--charcoal);
   color: var(--white);
   font: inherit;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: var(--btn-font);
+  font-weight: var(--btn-weight);
+  letter-spacing: var(--btn-tracking);
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .fleetBtn:hover {
@@ -1439,7 +1454,7 @@
 
 .compareCaseTitle {
   margin: 0;
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: var(--heading-sub);
   font-weight: 700;
   letter-spacing: -0.01em;
   text-align: center;
@@ -1453,10 +1468,10 @@
   max-width: 960px;
   margin: 0 auto;
   aspect-ratio: 16 / 10;
-  border-radius: 28px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--charcoal);
-  box-shadow: 0 24px 64px rgba(10, 10, 10, 0.12);
+  box-shadow: var(--shadow-elevated);
   cursor: ew-resize;
   touch-action: none;
   user-select: none;
@@ -1529,7 +1544,7 @@
   position: absolute;
   z-index: 2;
   padding: 8px 16px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1568,7 +1583,7 @@
   position: relative;
   border: none;
   padding: 0;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--charcoal);
   cursor: zoom-in;
@@ -1633,10 +1648,10 @@
   position: relative;
   width: min(92vw, 1120px);
   height: min(72vh, 760px);
-  border-radius: 22px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--charcoal);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-elevated);
 }
 
 .galleryLightboxImage {
@@ -1747,7 +1762,7 @@
   flex: 0 0 min(280px, 78vw);
   width: min(280px, 78vw);
   scroll-snap-align: start;
-  border-radius: 22px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--light-gray);
   border: 1.5px solid rgba(10, 10, 10, 0.06);
@@ -1756,7 +1771,7 @@
 
 .reviewCard:hover {
   border-color: rgba(var(--gold-rgb), 0.3);
-  box-shadow: 0 12px 36px rgba(10, 10, 10, 0.08);
+  box-shadow: var(--shadow-soft);
   transform: translateY(-2px);
 }
 

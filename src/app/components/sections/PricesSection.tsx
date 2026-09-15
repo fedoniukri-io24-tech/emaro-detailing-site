@@ -47,7 +47,7 @@ function CarsBentoGrid({
         <div className={styles.pricesBentoHeading}>
           <span className={styles.pricesBentoTitleLine}>
             {dict.prices.titleBefore}
-            {dict.prices.titleEm}
+            <em>{dict.prices.titleEm}</em>
           </span>
           <span className={styles.pricesBentoTitleAccent}>{dict.prices.categories.cars}</span>
         </div>

@@ -16,7 +16,7 @@
   width: 100%;
   max-width: 480px;
   padding: 10px 22px calc(28px + env(safe-area-inset-bottom, 0px));
-  border-radius: 28px 28px 0 0;
+  border-radius: var(--radius-lg) 28px 0 0;
   background: var(--white);
   box-shadow: 0 -8px 48px rgba(10, 10, 10, 0.18);
   animation: sheetUp 0.32s cubic-bezier(0.16, 1, 0.3, 1);
@@ -27,14 +27,14 @@
   width: 42px;
   height: 4px;
   margin: 0 auto 18px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(10, 10, 10, 0.14);
 }
 
 .title {
   margin: 0 0 22px;
-  font-size: clamp(22px, 5vw, 26px);
-  font-weight: 800;
+  font-size: var(--heading-card);
+  font-weight: var(--font-weight-heading);
   line-height: 1.15;
   letter-spacing: -0.02em;
   text-align: center;
@@ -52,7 +52,7 @@
   min-height: 54px;
   padding: 0 22px;
   border: 1px solid rgba(10, 10, 10, 0.08);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: #f2eee9;
   font: inherit;
   font-size: 16px;
@@ -79,11 +79,11 @@
   justify-content: space-between;
   gap: 12px;
   width: 100%;
-  min-height: 56px;
+  min-height: var(--btn-height);
   margin-top: 4px;
-  padding: 6px 6px 6px 24px;
+  padding: 6px 6px 6px var(--btn-pad-x);
   border: none;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--charcoal);
   color: var(--white);
   font: inherit;
@@ -102,9 +102,9 @@
 }
 
 .submitLabel {
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-size: var(--btn-font);
+  font-weight: var(--btn-weight);
+  letter-spacing: var(--btn-tracking);
   text-transform: uppercase;
 }
 
@@ -219,9 +219,9 @@
   }
 
   .sheet {
-    border-radius: 28px;
+    border-radius: var(--radius-lg);
     padding: 12px 28px 28px;
-    box-shadow: 0 28px 80px rgba(10, 10, 10, 0.24);
+    box-shadow: var(--shadow-elevated);
     animation: slideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }

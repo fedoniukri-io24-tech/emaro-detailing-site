@@ -26,8 +26,8 @@
 
 .title {
   margin: 0 0 10px;
-  font-size: clamp(32px, 4vw, 44px);
-  font-weight: 800;
+  font-size: var(--heading-page);
+  font-weight: var(--font-weight-heading);
   line-height: 1.08;
   letter-spacing: -0.03em;
   color: var(--charcoal);

@@ -3,6 +3,9 @@
   color: var(--dark-gray);
   padding: 64px var(--section-px) 0;
   border-top: 1.5px solid rgba(10, 10, 10, 0.08);
+  border-radius: var(--radius-shell) var(--radius-shell) 0 0;
+  overflow: hidden;
+  box-shadow: 0 -16px 48px rgba(10, 10, 10, 0.06);
 }
 
 .content {
@@ -119,18 +122,19 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 50px;
-  padding: 0 24px;
+  min-height: var(--btn-height);
+  padding: 0 var(--btn-pad-x);
   border: 1px solid var(--gold-border);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--charcoal);
   color: var(--white);
   font: inherit;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: var(--btn-font);
+  font-weight: var(--btn-weight);
+  letter-spacing: var(--btn-tracking);
   cursor: pointer;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-  box-shadow: 0 8px 24px rgba(10, 10, 10, 0.1);
+  box-shadow: var(--shadow-soft);
 }
 
 .cta:hover {

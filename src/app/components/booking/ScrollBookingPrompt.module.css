@@ -48,7 +48,7 @@
   position: relative;
   width: 100%;
   padding: 20px 18px 18px;
-  border-radius: 20px;
+  border-radius: var(--radius-md);
   background: var(--white);
   color: var(--charcoal);
   border: 1.5px solid rgba(10, 10, 10, 0.08);
@@ -97,16 +97,17 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 44px;
+  min-height: var(--btn-height-sm);
   margin-top: 16px;
-  padding: 0 18px;
+  padding: 0 var(--btn-pad-x);
   border: 1px solid var(--gold-border);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--charcoal);
   color: var(--white);
   font: inherit;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: var(--btn-font);
+  font-weight: var(--btn-weight);
+  letter-spacing: var(--btn-tracking);
   cursor: pointer;
   transition: background 0.2s, transform 0.2s, border-color 0.2s;
 }

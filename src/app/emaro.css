@@ -1,4 +1,5 @@
 .emaro {
+  /* Color */
   --gold: #ffd60a;
   --gold-light: #ffe566;
   --gold-dark: #e6bc00;
@@ -21,22 +22,50 @@
   --primary-accent: var(--gold);
   --dark-accent: var(--gold-dark);
 
+  /* Layout */
   --section-px: 48px;
   --section-py: 72px;
   --section-gap: 40px;
   --section-max: 1200px;
-
-  --heading-size: clamp(36px, 4.5vw, 56px);
-  --lead-size: 18px;
-
   --page-pad: var(--section-px);
   --page-pad-sm: 24px;
-  --radius: 22px;
-  --radius-sm: 14px;
-  --radius-pill: 999px;
 
+  /* Radius — one scale everywhere */
+  --radius-xs: 3px;
+  --radius-sm: 12px;
+  --radius-md: 22px;
+  --radius-lg: 28px;
+  --radius-shell: clamp(28px, 4vw, 44px);
+  --radius-pill: 999px;
+  --radius: var(--radius-md);
+
+  /* Type */
   --font-sans: 'Montserrat', 'Helvetica Neue', sans-serif;
-  --font-display: 'Montserrat', 'Helvetica Neue', sans-serif;
+  --font-display: var(--font-sans);
+  --heading-size: clamp(36px, 4.5vw, 56px);
+  --heading-display: clamp(36px, 5vw, 64px);
+  --heading-page: clamp(32px, 4.5vw, 48px);
+  --heading-card: clamp(22px, 2.3vw, 28px);
+  --heading-sub: clamp(20px, 2vw, 24px);
+  --text-sm: 14px;
+  --text-md: 15px;
+  --text-lg: 18px;
+  --lead-size: var(--text-lg);
+  --font-weight-heading: 700;
+  --letter-tight: -0.03em;
+
+  /* Buttons */
+  --btn-height: 48px;
+  --btn-height-sm: 44px;
+  --btn-pad-x: 24px;
+  --btn-font: 14px;
+  --btn-weight: 700;
+  --btn-tracking: 0.04em;
+
+  /* Elevation */
+  --shadow-soft: 0 12px 36px rgba(10, 10, 10, 0.08);
+  --shadow-card: 0 20px 56px rgba(10, 10, 10, 0.1);
+  --shadow-elevated: 0 24px 64px rgba(10, 10, 10, 0.12);
 
   font-family: var(--font-sans);
   color: var(--charcoal);
@@ -54,17 +83,24 @@
 
 .emaro .section-heading {
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: var(--font-weight-heading);
   font-size: var(--heading-size);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  line-height: 1.2;
+  letter-spacing: var(--letter-tight);
   color: var(--charcoal);
 }
 
 .emaro .section-heading em {
   font-style: normal;
-  font-weight: 600;
-  color: var(--gold);
+  font-weight: var(--font-weight-heading);
+  color: var(--charcoal);
+  background: var(--gold);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.06em 0.14em;
+  margin: 0 -0.04em;
+  border-radius: var(--radius-xs);
+  box-shadow: 0 0 0 0.06em var(--gold);
 }
 
 .emaro .section-lead {
@@ -76,7 +112,10 @@
 
 .emaro .section-lead strong {
   font-weight: 600;
-  color: var(--gold);
+  color: var(--charcoal);
+  background: var(--gold);
+  padding: 0.05em 0.12em;
+  border-radius: var(--radius-xs);
 }
 
 @media (min-width: 981px) {

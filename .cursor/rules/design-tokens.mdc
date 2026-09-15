@@ -1,0 +1,40 @@
+---
+description: Keep one unified design system via CSS tokens in emaro.css
+alwaysApply: true
+---
+
+# Design system tokens
+
+All visual styles must use tokens from `src/app/emaro.css`. Do not invent one-off radii, heading sizes, or button heights.
+
+## Radius
+
+| Token | Use |
+|---|---|
+| `--radius-xs` | Selection highlights |
+| `--radius-sm` | Chips, tags, small controls |
+| `--radius-md` | Mid cards (reviews, fleet, hero CTA card) |
+| `--radius-lg` | Large cards, panels, modals |
+| `--radius-shell` | Hero bottom / footer top curves |
+| `--radius-pill` | All CTAs and pill controls |
+
+## Type
+
+| Token | Use |
+|---|---|
+| `--heading-display` | Hero only |
+| `--heading-size` | Section titles |
+| `--heading-page` | Privacy / 404 |
+| `--heading-card` | Card titles |
+| `--heading-sub` | Category / subsection titles |
+| `--font-weight-heading` | All headings (700) |
+
+## Buttons
+
+Primary charcoal pills: `--btn-height` (48), `--btn-pad-x` (24), `--btn-font` (14), `--btn-weight` (700), `--radius-pill`.
+
+Compact / nav: `--btn-height-sm` (44).
+
+## Shadows
+
+Prefer `--shadow-soft`, `--shadow-card`, `--shadow-elevated`.
