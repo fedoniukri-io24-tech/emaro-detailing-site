@@ -3,14 +3,19 @@ import NotFoundContent from './components/NotFoundContent'
 import { LocaleProvider } from '../i18n/LocaleProvider'
 import { getDictionarySync } from '../i18n/getDictionary'
 import { defaultLocale } from '../i18n/config'
+import { buildPageMetadata } from './lib/pageMetadata'
 
 const dict = getDictionarySync(defaultLocale)
 
-export const metadata: Metadata = {
-  title: { absolute: dict.notFound.metaTitle },
+export const metadata: Metadata = buildPageMetadata({
+  locale: defaultLocale,
+  title: dict.notFound.metaTitle,
   description: dict.notFound.metaDescription,
-  robots: { index: false, follow: true },
-}
+  keywords: dict.seo.keywords,
+  ogImageAlt: dict.seo.ogImageAlt,
+  noIndex: true,
+  absoluteTitle: true,
+})
 
 export default function RootNotFound() {
   return (

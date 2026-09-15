@@ -2,29 +2,35 @@ import type { Dictionary } from '../types'
 
 export const pl: Dictionary = {
   seo: {
-    defaultTitle: 'Emaro Premium Auto Care — Mobilny detailing · Warszawa',
-    defaultDescription: 'Emaro Premium Auto Care — więcej niż czyste auto. Mobilny detailing w Warszawie i okolicach. Mycie, czyszczenie wnętrza i pielęgnacja aut, busów i ciężarówek.',
+    defaultTitle: 'Emaro Premium Auto Care — Mobilny detailing w Warszawie',
+    defaultDescription:
+      'Mobilny detailing w Warszawie i okolicach. Mycie aut, czyszczenie wnętrza, pranie tapicerki oraz pielęgnacja busów i ciężarówek. Przyjedziemy do Ciebie.',
     keywords: [
       'mobilny detailing warszawa',
       'detailing samochodowy warszawa',
       'mycie aut warszawa',
       'czyszczenie wnętrza samochodu',
       'pranie tapicerki samochodowej',
-      'detailing busów',
-      'mycie ciężarówek',
+      'czyszczenie foteli skórzanych',
+      'detailing busów warszawa',
+      'mycie ciężarówek warszawa',
+      'mobilne mycie aut',
       'Emaro Premium Auto Care',
+      'Emaro detailing',
     ],
     ogImageAlt: 'Emaro Premium Auto Care — mobilny detailing w Warszawie',
+    siteName: 'Emaro Premium Auto Care',
   },
-    notFound: {
+  notFound: {
     metaTitle: '404 — Strona nie znaleziona | Emaro Premium Auto Care',
-    metaDescription: 'Strona, której szukasz, nie istnieje. Wróć na stronę główną Emaro Premium Auto Care.',
+    metaDescription:
+      'Strona, której szukasz, nie istnieje lub została przeniesiona. Wróć na stronę główną Emaro Premium Auto Care.',
     code: '404',
     heading: 'Strona nie znaleziona',
     text: 'Wygląda na to, że ta strona nie istnieje lub została przeniesiona.',
     home: 'Strona główna',
   },
-nav: {
+  nav: {
       about: 'O nas',
       services: 'Usługi',
       prices: 'Ceny',
@@ -305,9 +311,9 @@ nav: {
       developedBy: 'Opracowane przez',
     },
     privacy: {
-      metaTitle: 'Polityka prywatności',
+      metaTitle: 'Polityka prywatności | Emaro Premium Auto Care',
       metaDescription:
-        'Polityka prywatności Emaro Premium Auto Care — jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe.',
+        'Polityka prywatności Emaro Premium Auto Care — jak zbieramy, wykorzystujemy i chronimy dane osobowe klientów mobilnego detailingu w Warszawie.',
       title: 'Polityka prywatności',
       updated: 'Ostatnia aktualizacja: 15 września 2026 r.',
       back: 'Strona główna',

@@ -2,28 +2,34 @@ import type { Dictionary } from '../types'
 
 export const uk: Dictionary = {
   seo: {
-    defaultTitle: 'Emaro Premium Auto Care — Мобільний детейлінг · Варшава',
-    defaultDescription: 'Emaro Premium Auto Care — więcej niż czyste auto. Мобільний детейлінг у Варшаві та околицях. Миття, очищення салону та догляд за авто, бусами та вантажівками.',
+    defaultTitle: 'Emaro Premium Auto Care — Мобільний детейлінг у Варшаві',
+    defaultDescription:
+      'Мобільний детейлінг у Варшаві та околицях. Миття авто, очищення салону, хімчистка оббивки та догляд за бусами й вантажівками. Приїдемо до вас.',
     keywords: [
       'мобільний детейлінг варшава',
       'детейлінг авто варшава',
       'миття авто варшава',
       'хімчистка салону авто',
-      'детейлінг бусів',
-      'миття вантажівок',
+      'чистка шкіряних сидінь',
+      'детейлінг бусів варшава',
+      'миття вантажівок варшава',
+      'мобільне миття авто',
       'Emaro Premium Auto Care',
+      'Emaro детейлінг',
     ],
     ogImageAlt: 'Emaro Premium Auto Care — мобільний детейлінг у Варшаві',
+    siteName: 'Emaro Premium Auto Care',
   },
-    notFound: {
+  notFound: {
     metaTitle: '404 — Сторінку не знайдено | Emaro Premium Auto Care',
-    metaDescription: 'Сторінку, яку ви шукаєте, не знайдено. Поверніться на головну сторінку Emaro Premium Auto Care.',
+    metaDescription:
+      'Сторінку, яку ви шукаєте, не знайдено або її перенесено. Поверніться на головну Emaro Premium Auto Care.',
     code: '404',
     heading: 'Сторінку не знайдено',
     text: 'Схоже, цієї сторінки не існує або її було перенесено.',
     home: 'Головна сторінка',
   },
-nav: {
+  nav: {
       about: 'Про нас',
       services: 'Послуги',
       prices: 'Ціни',
@@ -305,9 +311,9 @@ nav: {
       developedBy: 'Розроблено',
     },
     privacy: {
-      metaTitle: 'Політика конфіденційності',
+      metaTitle: 'Політика конфіденційності | Emaro Premium Auto Care',
       metaDescription:
-        'Політика конфіденційності Emaro Premium Auto Care — як ми збираємо, використовуємо та захищаємо ваші персональні дані.',
+        'Політика конфіденційності Emaro Premium Auto Care — як ми збираємо, використовуємо та захищаємо персональні дані клієнтів мобільного детейлінгу у Варшаві.',
       title: 'Політика конфіденційності',
       updated: 'Останнє оновлення: 15 вересня 2026 р.',
       back: 'На головну',

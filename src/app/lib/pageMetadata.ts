@@ -59,6 +59,12 @@ export function buildPageMetadata({
     title: absoluteTitle ? { absolute: title } : title,
     description,
     keywords: keywords.length ? keywords : undefined,
+    applicationName: SITE_NAME,
+    authors: [{ name: SITE_NAME, url: absoluteUrl('/') }],
+    creator: SITE_NAME,
+    publisher: SITE_NAME,
+    category: 'automotive',
+    referrer: 'origin-when-cross-origin',
     alternates: {
       canonical: url,
       languages: languageAlternates(normalized),
@@ -85,7 +91,14 @@ export function buildPageMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [imageUrl],
+      images: [
+        {
+          url: imageUrl,
+          width: OG_IMAGE_WIDTH,
+          height: OG_IMAGE_HEIGHT,
+          alt: ogImageAlt ?? title,
+        },
+      ],
     },
     robots: noIndex
       ? { index: false, follow: true }
@@ -100,5 +113,11 @@ export function buildPageMetadata({
             'max-video-preview': -1,
           },
         },
+    other: {
+      'geo.region': 'PL-MZ',
+      'geo.placename': 'Warszawa',
+      'geo.position': '52.2297;21.0122',
+      ICBM: '52.2297, 21.0122',
+    },
   }
 }

@@ -5,7 +5,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: BRAND.name,
     short_name: BRAND.shortName,
-    description: 'Emaro Premium Auto Care — więcej niż czyste auto. Mobilny detailing w Warszawie.',
+    description:
+      'Emaro Premium Auto Care — mobilny detailing w Warszawie. Mycie, czyszczenie wnętrza i pielęgnacja aut, busów i ciężarówek.',
     start_url: '/pl',
     id: '/',
     scope: '/',
@@ -17,6 +18,18 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: 'ltr',
     categories: ['business', 'automotive'],
     icons: [
+      {
+        src: '/images/emaro/favicon-32.png',
+        sizes: '32x32',
+        type: 'image/png',
+        purpose: 'any',
+      },
+      {
+        src: '/images/emaro/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+        purpose: 'any',
+      },
       {
         src: '/images/emaro/logo.png',
         sizes: '500x500',

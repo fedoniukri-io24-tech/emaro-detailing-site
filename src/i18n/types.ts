@@ -11,6 +11,7 @@ export type Dictionary = {
     defaultDescription: string
     keywords: string[]
     ogImageAlt: string
+    siteName: string
   }
   notFound: {
     metaTitle: string

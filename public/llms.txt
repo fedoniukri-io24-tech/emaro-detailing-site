@@ -6,6 +6,8 @@
 
 - [Polski (PL)](https://emaroautocare.pl/pl): Strona główna — usługi, cennik, galeria, kontakt
 - [Українська (UA)](https://emaroautocare.pl/uk): Головна — послуги, ціни, галерея, контакти
+- [Polityka prywatności (PL)](https://emaroautocare.pl/pl/privacy)
+- [Політика конфіденційності (UA)](https://emaroautocare.pl/uk/privacy)
 
 ## Services
 
@@ -20,6 +22,9 @@
 
 - Phone: +48 577 123 029
 - Email: emaroautocare@gmail.com
+- WhatsApp: https://wa.me/48577123029
+- Telegram: https://t.me/emaro_premium
+- Instagram: https://www.instagram.com/emaro.premium/
 - Area: Warszawa i okolice, Polska
 
 ## Languages
@@ -31,3 +36,4 @@
 
 - Sitemap: https://emaroautocare.pl/sitemap.xml
 - Robots: https://emaroautocare.pl/robots.txt
+- Manifest: https://emaroautocare.pl/manifest.webmanifest

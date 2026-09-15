@@ -32,16 +32,20 @@ export default function JsonLd({ locale, dict }: Props) {
 
   const organization = {
     '@context': 'https://schema.org',
-    '@type': 'AutoDetailing',
+    '@type': ['LocalBusiness', 'AutoDetailing'],
     '@id': `${SITE_URL}/#organization`,
     name: SITE_NAME,
+    alternateName: BRAND.shortName,
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
       url: absoluteUrl(SCHEMA_LOGO),
+      width: 500,
+      height: 500,
     },
-    image: absoluteUrl(OG_IMAGE),
+    image: [absoluteUrl(OG_IMAGE), absoluteUrl(SCHEMA_LOGO)],
     description: dict.seo.defaultDescription,
+    slogan: BRAND.tagline,
     email: BRAND.email,
     telephone: phoneTel(BRAND.phone),
     address: {
@@ -49,6 +53,11 @@ export default function JsonLd({ locale, dict }: Props) {
       addressLocality: 'Warszawa',
       addressRegion: 'Mazowieckie',
       addressCountry: 'PL',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 52.2297,
+      longitude: 21.0122,
     },
     areaServed: {
       '@type': 'GeoCircle',
@@ -69,6 +78,8 @@ export default function JsonLd({ locale, dict }: Props) {
     },
     priceRange: '$$',
     currenciesAccepted: 'PLN',
+    paymentAccepted: 'Cash, Card, Transfer',
+    knowsLanguage: ['pl', 'uk'],
     sameAs: [...SAME_AS],
   }
 
@@ -82,6 +93,17 @@ export default function JsonLd({ locale, dict }: Props) {
     description: dict.seo.defaultDescription,
     publisher: { '@id': `${SITE_URL}/#organization` },
     inLanguage: ['pl', 'uk'],
+    potentialAction: {
+      '@type': 'CommunicateAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: pageUrl,
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/MobileWebPlatform',
+        ],
+      },
+    },
   }
 
   const webPage = {
@@ -94,7 +116,25 @@ export default function JsonLd({ locale, dict }: Props) {
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
     inLanguage: lang,
-    primaryImageOfPage: absoluteUrl(OG_IMAGE),
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: absoluteUrl(OG_IMAGE),
+      width: 1200,
+      height: 630,
+    },
+  }
+
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: SITE_NAME,
+        item: pageUrl,
+      },
+    ],
   }
 
   const services = Object.values(dict.services.items).map((item) => ({
@@ -105,6 +145,7 @@ export default function JsonLd({ locale, dict }: Props) {
       description: item.description,
       provider: { '@id': `${SITE_URL}/#organization` },
       areaServed: 'Warszawa i okolice',
+      serviceType: 'Auto detailing',
     },
     priceSpecification: {
       '@type': 'PriceSpecification',
@@ -125,7 +166,57 @@ export default function JsonLd({ locale, dict }: Props) {
       <JsonLdScript data={organization} />
       <JsonLdScript data={website} />
       <JsonLdScript data={webPage} />
+      <JsonLdScript data={breadcrumb} />
       <JsonLdScript data={offerCatalog} />
+    </>
+  )
+}
+
+type PrivacyProps = {
+  locale: Locale
+  dict: Dictionary
+}
+
+export function PrivacyJsonLd({ locale, dict }: PrivacyProps) {
+  const lang = localeHtmlLang[locale]
+  const homeUrl = absoluteUrl(`/${locale}`)
+  const pageUrl = absoluteUrl(`/${locale}/privacy`)
+
+  const webPage = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${pageUrl}/#webpage`,
+    url: pageUrl,
+    name: dict.privacy.metaTitle,
+    description: dict.privacy.metaDescription,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    about: { '@id': `${SITE_URL}/#organization` },
+    inLanguage: lang,
+  }
+
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: SITE_NAME,
+        item: homeUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: dict.privacy.title,
+        item: pageUrl,
+      },
+    ],
+  }
+
+  return (
+    <>
+      <JsonLdScript data={webPage} />
+      <JsonLdScript data={breadcrumb} />
     </>
   )
 }
