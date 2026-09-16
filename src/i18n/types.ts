@@ -34,11 +34,12 @@ export type Dictionary = {
     mobileNav: string
   }
   hero: {
-    sloganEm: string
-    mobileLabel: string
-    mobileText: string
-    ctaTitle: string
-    ctaSub: string
+    lines: string[]
+    accent: string
+    pillars: [string, string, string]
+    cardLabel: string
+    cardTitle: string
+    cardSub: string
   }
   about: {
     titleBefore: string

@@ -43,11 +43,12 @@ export const pl: Dictionary = {
       mobileNav: 'Nawigacja mobilna',
     },
     hero: {
-      sloganEm: 'więcej niż czyste auto',
-      mobileLabel: 'Mobilny detailing',
-      mobileText: 'Przyjeżdżamy do Ciebie w Warszawie i okolicach — dom, biuro lub parking. Profesjonalna chemia detailingowa i dbałość o każdy detal.',
-      ctaTitle: 'Podetailujemy Twoje auto?',
-      ctaSub: 'Przyjedziemy tam, gdzie Ci wygodnie',
+      lines: ['Premium detailing', 'z dojazdem do Ciebie', 'w Warszawie'],
+      accent: 'detailing',
+      pillars: ['Mycie', 'Wnętrze', 'Kabiny'],
+      cardLabel: 'Warszawa i okolice',
+      cardTitle: 'Podetailujemy Twoje auto?',
+      cardSub: 'Przyjedziemy tam, gdzie Ci wygodnie',
     },
     about: {
       titleBefore: 'O ',
