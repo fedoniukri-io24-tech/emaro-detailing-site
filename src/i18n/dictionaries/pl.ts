@@ -77,54 +77,54 @@ export const pl: Dictionary = {
         trucks: 'Samochody ciężarowe',
       },
       notes: [
-        'Cena prania i czyszczenia wnętrza ustalana jest indywidualnie i zależy m.in. od rodzaju pojazdu (bus osobowy lub dostawczy), liczby foteli wymagających prania oraz stopnia zabrudzenia. Przy większej liczbie naczep cena również ustalana jest indywidualnie — w zależności od zakresu i ilości prac.',
+        'Cenę czyszczenia wnętrza ustalamy na miejscu — zależy od typu auta, liczby foteli i tego, jak mocno jest brudne. Przy kilku naczepach też liczymy osobno.',
       ],
       items: {
         'cars-interior': {
-          title: 'Kompleksowe czyszczenie i pielęgnacja wnętrza',
+          title: 'Czyszczenie wnętrza',
           description:
-            'Odkurzanie, czyszczenie plastików i wszystkich powierzchni wnętrza. Profesjonalna chemia i dbałość o trudno dostępne miejsca.',
+            'Odkurzamy wnętrze, myjemy plastiki, przecieramy panele i miejsca, do których trudno dojść. Żeby było naprawdę czysto, a nie „na odczepnego”.',
           price: 'od 250 zł',
         },
         'cars-seats-leather': {
           title: 'Fotele skórzane',
           description:
-            'Czyszczenie i zabezpieczenie skóry profesjonalnymi środkami. Po zabiegu — warstwa ochronna na co dzień.',
+            'Czyścimy skórę z brudu i osadów, potem dajemy ochronę — dłużej wygląda dobrze i mniej się brudzi.',
           price: 'od 50 zł / fotel',
         },
         'cars-seats-fabric': {
           title: 'Fotele materiałowe',
           description:
-            'Pranie i usuwanie plam z tapicerki materiałowej. Odświeżenie materiału bez uszkodzeń.',
+            'Pieremy materiał i ściągamy plamy — po kawie, jedzeniu czy zwykłym użytkowaniu. Bez wypalania koloru.',
           price: 'od 60 zł / fotel',
         },
         'cars-exterior': {
           title: 'Mycie zewnętrzne',
           description:
-            'Trzyetapowe mycie nadwozia, felg i opon. Dressing opon dla schludnego wyglądu.',
+            'Myjemy nadwozie, felgi i opony w trzech etapach. Na koniec czernimy gumę — auto wygląda świeżo.',
           price: 'od 150 zł',
         },
         'vans-interior': {
           title: 'Wnętrze',
           description:
-            'Odkurzanie, plastiki, fotele. Cena zależy od typu busa i stopnia zabrudzenia.',
+            'Odkurzanie, plastiki, fotele. W busie osobowym i dostawczym zakres jest inny — cenę podamy po obejrzeniu.',
           price: 'od 290 zł',
         },
         'vans-exterior': {
           title: 'Mycie zewnętrzne',
-          description: 'Nadwozie, felgi, opony — standardowe trzyetapowe mycie.',
+          description: 'Nadwozie, felgi, opony — to samo trzyetapowe mycie co przy osobówkach.',
           price: 'od 150 zł',
         },
         'trucks-cabin': {
           title: 'Kabina',
           description:
-            'Wnętrze, sypialnia, mycie zewnętrzne — pełna pielęgnacja kabiny w jednej usłudze.',
+            'Czyścimy wnętrze i sypialnię, myjemy kabinę z zewnątrz. Wszystko w jednej cenie.',
           price: '745 zł / kabina',
         },
         'trucks-full': {
           title: 'Kabina + naczepa',
           description:
-            'To samo dla kabiny plus mycie naczepy. Kilka naczep — wycena indywidualna.',
+            'Kabina jak wyżej plus mycie naczepy. Jak naczep jest więcej — doliczamy.',
           price: '1105 zł / zestaw',
         },
       },
@@ -132,14 +132,13 @@ export const pl: Dictionary = {
     prices: {
       titleBefore: 'Cennik ',
       titleEm: 'usług',
-      note: 'Dokładną cenę podamy po obejrzeniu auta — zależy od rozmiaru i stopnia zabrudzenia.',
+      note: 'Dokładną kwotę podamy po obejrzeniu — zależy od rozmiaru auta i tego, jak jest brudne.',
       book: 'Zapisz się',
-      bentoLead:
-        'Przyjedziemy tam, gdzie Ci wygodnie: dom, biuro lub parking.',
+      bentoLead: 'Przyjedziemy do domu, do biura albo na parking.',
       bentoAccentTitle: 'Mobilny detailing',
       bentoAccentSub: 'Warszawa i okolice',
-      bentoWideTitle: 'Troska o każdy detal',
-      bentoWideSub: 'Kompleksowa pielęgnacja samochodów osobowych',
+      bentoWideTitle: 'Samochody osobowe',
+      bentoWideSub: 'Wnętrze, fotele, mycie zewnętrzne',
       categories: {
         cars: 'Samochody osobowe',
         vans: 'Busy i samochody dostawcze',
@@ -147,44 +146,44 @@ export const pl: Dictionary = {
       },
       items: {
         'cars-interior': {
-          title: 'Kompleksowe czyszczenie wnętrza',
+          title: 'Czyszczenie wnętrza',
           price: 'od 250 zł',
-          summary: 'Odkurzanie, plastiki i trudno dostępne miejsca — w jednej usłudze.',
+          summary: 'Odkurzanie, plastiki, panele — wnętrze na gotowo.',
         },
         'cars-seats-leather': {
           title: 'Fotele skórzane',
           price: 'od 50 zł / fotel',
-          summary: 'Czyszczenie i zabezpieczenie skóry profesjonalnymi środkami.',
+          summary: 'Czyszczenie skóry + ochrona na koniec.',
         },
         'cars-seats-fabric': {
           title: 'Fotele materiałowe',
           price: 'od 60 zł / fotel',
-          summary: 'Pranie tapicerki i usuwanie trudnych plam.',
+          summary: 'Pranie materiału i ściąganie plam.',
         },
         'cars-exterior': {
           title: 'Mycie zewnętrzne',
           price: 'od 150 zł',
-          summary: 'Nadwozie, felgi, opony — trzyetapowe mycie z dressingiem.',
+          summary: 'Nadwozie, felgi, opony — trzy etapy + czernienie gumy.',
         },
         'vans-interior': {
           title: 'Wnętrze',
           price: 'od 290 zł',
-          summary: 'Odkurzanie, plastiki, fotele. Cena zależy od typu busa i stopnia zabrudzenia.',
+          summary: 'Odkurzanie, plastiki, fotele. Cena po obejrzeniu busa.',
         },
         'vans-exterior': {
           title: 'Mycie zewnętrzne',
           price: 'od 150 zł',
-          summary: 'Nadwozie, felgi, opony — standardowe trzyetapowe mycie.',
+          summary: 'Nadwozie, felgi, opony — trzyetapowe mycie.',
         },
         'trucks-cabin': {
           title: 'Kabina',
           price: '745 zł / kabina',
-          summary: 'Wnętrze, sypialnia, mycie zewnętrzne — wszystko w cenie.',
+          summary: 'Wnętrze, sypialnia i mycie z zewnątrz.',
         },
         'trucks-full': {
           title: 'Kabina + naczepa',
           price: '1105 zł / zestaw',
-          summary: 'Pielęgnacja kabiny i mycie naczepy. Kilka naczep — wycena indywidualna.',
+          summary: 'Kabina + mycie naczepy. Kilka naczep — osobno.',
         },
       },
     },

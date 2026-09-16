@@ -26,9 +26,9 @@ export type GalleryItem = {
 const u = (id: string, w = 900) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`
 
-const local = (path: string) => `/images/emaro/${path}`
+const serviceImage = (filename: string) => `/images/emaro/services/${filename}`
 
-/** Verified Unsplash IDs (HTTP 200) — auto / detailing themed */
+/** Verified Unsplash IDs (HTTP 200) — before-after / about fallback */
 const IMG = {
   interior: 'photo-1580273916550-e323be2ae537',
   leather: 'photo-1503376780353-7e6692767b70',
@@ -61,96 +61,96 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'cars-interior',
     category: 'cars',
-    image: u(IMG.interior),
-    imagePosition: 'center 50%',
+    image: serviceImage('cars-interior.jpg'),
+    imagePosition: 'center 42%',
     theme: 'dark',
   },
   {
     id: 'cars-seats-leather',
     category: 'cars',
-    image: u(IMG.leather),
-    imagePosition: 'center 42%',
+    image: serviceImage('cars-seats-leather.jpg'),
+    imagePosition: 'center 58%',
     theme: 'photo',
   },
   {
     id: 'cars-seats-fabric',
     category: 'cars',
-    image: u(IMG.fabric),
-    imagePosition: 'center 48%',
+    image: serviceImage('cars-seats-fabric.jpg'),
+    imagePosition: 'center 45%',
     theme: 'photoAlt',
   },
   {
     id: 'cars-exterior',
     category: 'cars',
-    image: u(IMG.wash),
-    imagePosition: 'center 45%',
+    image: serviceImage('cars-exterior.webp'),
+    imagePosition: 'center 48%',
     theme: 'light',
   },
   {
     id: 'vans-interior',
     category: 'vans',
-    image: u(IMG.steering),
-    imagePosition: 'center 50%',
+    image: serviceImage('vans-interior.jpg'),
+    imagePosition: 'center 38%',
     theme: 'dark',
   },
   {
     id: 'vans-exterior',
     category: 'vans',
-    image: u(IMG.van),
-    imagePosition: 'center 40%',
+    image: serviceImage('vans-exterior.jpg'),
+    imagePosition: 'center 35%',
     theme: 'photo',
   },
   {
     id: 'trucks-cabin',
     category: 'trucks',
-    image: u(IMG.garage),
-    imagePosition: 'center 45%',
+    image: serviceImage('trucks-cabin.jpg'),
+    imagePosition: 'center 55%',
     theme: 'photoAlt',
   },
   {
     id: 'trucks-full',
     category: 'trucks',
-    image: u(IMG.truck),
-    imagePosition: 'center 35%',
+    image: serviceImage('trucks-full.webp'),
+    imagePosition: 'center 40%',
     theme: 'light',
   },
 ]
 
 export const GALLERY_IMAGES: GalleryItem[] = [
-  { id: 'g1', src: local('hero-desktop.png'), position: 'center 42%' },
-  { id: 'g2', src: u(IMG.wash), position: 'center 45%' },
-  { id: 'g3', src: u(IMG.interior), position: 'center 50%' },
-  { id: 'g4', src: u(IMG.leather), position: 'center 40%' },
-  { id: 'g5', src: u(IMG.fabric), position: 'center 48%' },
-  { id: 'g6', src: u(IMG.sports), position: 'center 45%' },
-  { id: 'g7', src: u(IMG.detail), position: 'center 42%' },
-  { id: 'g8', src: u(IMG.sedan), position: 'center 40%' },
-  { id: 'g9', src: u(IMG.truck), position: 'center 38%' },
+  { id: 'g1', src: '/images/emaro/hero-desktop.png', position: 'center 42%' },
+  { id: 'g2', src: serviceImage('cars-exterior.webp'), position: 'center 48%' },
+  { id: 'g3', src: serviceImage('cars-interior.jpg'), position: 'center 42%' },
+  { id: 'g4', src: serviceImage('cars-seats-leather.jpg'), position: 'center 58%' },
+  { id: 'g5', src: serviceImage('cars-seats-fabric.jpg'), position: 'center 45%' },
+  { id: 'g6', src: serviceImage('vans-interior.jpg'), position: 'center 38%' },
+  { id: 'g7', src: serviceImage('vans-exterior.jpg'), position: 'center 35%' },
+  { id: 'g8', src: serviceImage('trucks-cabin.jpg'), position: 'center 55%' },
+  { id: 'g9', src: serviceImage('trucks-full.webp'), position: 'center 40%' },
 ]
 
 export const BEFORE_AFTER_ITEMS: BeforeAfterItem[] = [
   {
     id: 'ba-exterior',
-    image: u(IMG.wash),
-    position: 'center 45%',
+    image: serviceImage('cars-exterior.webp'),
+    position: 'center 48%',
     beforeFilter: 'brightness(0.58) saturate(0.42) contrast(1.18) sepia(0.12)',
   },
   {
     id: 'ba-interior',
-    image: u(IMG.interior),
-    position: 'center 50%',
+    image: serviceImage('cars-interior.jpg'),
+    position: 'center 42%',
     beforeFilter: 'brightness(0.55) saturate(0.38) contrast(1.22)',
   },
   {
     id: 'ba-leather',
-    image: u(IMG.leather),
-    position: 'center 42%',
+    image: serviceImage('cars-seats-leather.jpg'),
+    position: 'center 58%',
     beforeFilter: 'brightness(0.6) saturate(0.48) contrast(1.12) sepia(0.08)',
   },
   {
     id: 'ba-wheels',
-    image: u(IMG.sedan),
-    position: 'center 40%',
+    image: serviceImage('vans-exterior.jpg'),
+    position: 'center 35%',
     beforeFilter: 'brightness(0.62) saturate(0.5) contrast(1.15)',
   },
 ]
