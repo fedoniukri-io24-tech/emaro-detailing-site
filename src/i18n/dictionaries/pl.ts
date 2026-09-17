@@ -278,6 +278,7 @@ export const pl: Dictionary = {
       successTitle: 'Dziękujemy!',
       successText: 'Skontaktujemy się z Tobą wkrótce.',
       close: 'Zamknij',
+      error: 'Nie udało się wysłać. Spróbuj ponownie lub napisz do nas na Telegram / WhatsApp.',
     },
     contact: {
       heading: 'Podetailujemy',
@@ -312,6 +313,7 @@ export const pl: Dictionary = {
         'Kabina + naczepa',
         'Inne',
       ],
+      error: 'Nie udało się wysłać. Spróbuj ponownie lub napisz do nas na Telegram / WhatsApp.',
     },
     footer: {
       navLabel: 'Nawigacja w stopce',

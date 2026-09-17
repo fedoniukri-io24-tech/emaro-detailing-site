@@ -25,12 +25,18 @@ export function useBodyScrollLock(locked: boolean) {
 
     return () => {
       lockCount = Math.max(0, lockCount - 1)
-      if (lockCount === 0) {
-        html.classList.remove('scroll-locked')
-        body.classList.remove('scroll-locked')
-        body.style.top = ''
-        window.scrollTo(0, savedScrollY)
-      }
+      if (lockCount !== 0) return
+
+      const y = savedScrollY
+      html.classList.remove('scroll-locked')
+      body.classList.remove('scroll-locked')
+      body.style.top = ''
+
+      // Avoid jump: html has scroll-behavior:smooth globally, so restore instantly.
+      const prev = html.style.scrollBehavior
+      html.style.scrollBehavior = 'auto'
+      window.scrollTo(0, y)
+      html.style.scrollBehavior = prev
     }
   }, [locked])
 }

@@ -277,6 +277,7 @@ export const uk: Dictionary = {
       successTitle: 'Дякуємо!',
       successText: 'Ми звʼяжемося з вами найближчим часом.',
       close: 'Закрити',
+      error: 'Не вдалося надіслати. Спробуйте ще раз або напишіть нам у Telegram / WhatsApp.',
     },
     contact: {
       heading: 'Подетейлимо',
@@ -311,6 +312,7 @@ export const uk: Dictionary = {
         'Кабіна + напівпричіп',
         'Інше',
       ],
+      error: 'Не вдалося надіслати. Спробуйте ще раз або напишіть нам у Telegram / WhatsApp.',
     },
     footer: {
       navLabel: 'Навігація в підвалі',

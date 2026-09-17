@@ -42,6 +42,7 @@
 }
 
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -127,6 +128,27 @@
   line-height: 1.5;
   text-align: center;
   color: var(--stone);
+}
+
+.error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(180, 40, 40, 0.08);
+  border: 1px solid rgba(180, 40, 40, 0.22);
+  color: #8a1f1f;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .altContact {

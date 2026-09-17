@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { BRAND } from '../../brand'
-import { useDictionary } from '../../../i18n/LocaleProvider'
+import { submitLead } from '../../lib/submitLead'
+import { useDictionary, useLocale } from '../../../i18n/LocaleProvider'
 import styles from './BookingModal.module.css'
 
-type FormState = { name: string; phone: string; email: string }
-type Status = 'idle' | 'loading' | 'success'
+type FormState = { name: string; phone: string; email: string; website: string }
+type Status = 'idle' | 'loading' | 'success' | 'error'
 
 function SubmitArrowIcon() {
   return (
@@ -40,14 +41,15 @@ export default function BookingModal({
   onClose: () => void
 }) {
   const dict = useDictionary()
+  const locale = useLocale()
   const dialogRef = useRef<HTMLDivElement>(null)
-  const [form, setForm] = useState<FormState>({ name: '', phone: '', email: '' })
+  const [form, setForm] = useState<FormState>({ name: '', phone: '', email: '', website: '' })
   const [status, setStatus] = useState<Status>('idle')
 
   useEffect(() => {
     if (!isOpen) {
       setStatus('idle')
-      setForm({ name: '', phone: '', email: '' })
+      setForm({ name: '', phone: '', email: '', website: '' })
       return
     }
 
@@ -59,8 +61,19 @@ export default function BookingModal({
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
     setStatus('loading')
-    await new Promise((resolve) => setTimeout(resolve, 1200))
-    setStatus('success')
+    try {
+      await submitLead({
+        source: 'booking',
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        locale,
+        website: form.website,
+      })
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -96,13 +109,28 @@ export default function BookingModal({
             <h2 id="booking-modal-title" className={styles.title}>{dict.booking.modalTitle}</h2>
 
             <form className={styles.form} onSubmit={handleSubmit} noValidate>
+              <div className={styles.honeypot} aria-hidden="true">
+                <label htmlFor="booking-company">Company</label>
+                <input
+                  id="booking-company"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={(event) => setForm((prev) => ({ ...prev, website: event.target.value }))}
+                />
+              </div>
               <input
                 id="booking-name"
                 type="text"
                 className={styles.input}
                 placeholder={dict.booking.namePh}
                 value={form.name}
-                onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
+                onChange={(event) => {
+                  setForm((prev) => ({ ...prev, name: event.target.value }))
+                  if (status === 'error') setStatus('idle')
+                }}
                 required
                 autoComplete="name"
               />
@@ -112,7 +140,10 @@ export default function BookingModal({
                 className={styles.input}
                 placeholder={dict.booking.phonePh}
                 value={form.phone}
-                onChange={(event) => setForm((prev) => ({ ...prev, phone: event.target.value }))}
+                onChange={(event) => {
+                  setForm((prev) => ({ ...prev, phone: event.target.value }))
+                  if (status === 'error') setStatus('idle')
+                }}
                 required
                 autoComplete="tel"
               />
@@ -122,9 +153,14 @@ export default function BookingModal({
                 className={styles.input}
                 placeholder={dict.booking.emailPh}
                 value={form.email}
-                onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
+                onChange={(event) => {
+                  setForm((prev) => ({ ...prev, email: event.target.value }))
+                  if (status === 'error') setStatus('idle')
+                }}
                 autoComplete="email"
               />
+
+              {status === 'error' && <p className={styles.error}>{dict.booking.error}</p>}
 
               <button type="submit" className={styles.submit} disabled={status === 'loading'}>
                 <span className={styles.submitLabel}>

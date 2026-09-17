@@ -11,12 +11,20 @@
 
 ## Services
 
-- Kompleksowe czyszczenie wnętrza (od 250 zł — auto osobowe)
-- Czyszczenie foteli skórzanych (od 50 zł / fotel)
-- Czyszczenie foteli materiałowych (od 60 zł / fotel)
+### Samochody osobowe
+- Kompleksowe czyszczenie wnętrza (od 250 zł)
+- Fotel skórzany (od 50 zł / fotel)
+- Fotel materiałowy (od 60 zł / fotel)
 - Mycie zewnętrzne (od 150 zł)
-- Detailing busów (od 290 zł wnętrze)
-- Detailing ciężarówek (745 zł kabina, 1105 zł kabina + naczepa)
+
+### Busy i samochody dostawcze
+- Kompleksowe czyszczenie wnętrza (od 290 zł)
+- Czyszczenie foteli (wycena indywidualna)
+- Mycie zewnętrzne (od 150 zł)
+
+### Samochody ciężarowe
+- Kabina ciągnika siodłowego (745 zł)
+- Kabina + naczepa (1105 zł)
 
 ## Contact
 
@@ -32,8 +40,10 @@
 - Polish (pl): https://emaroautocare.pl/pl
 - Ukrainian (uk): https://emaroautocare.pl/uk
 
-## SEO
+## Technical / SEO
 
 - Sitemap: https://emaroautocare.pl/sitemap.xml
 - Robots: https://emaroautocare.pl/robots.txt
 - Manifest: https://emaroautocare.pl/manifest.webmanifest
+- Humans: https://emaroautocare.pl/humans.txt
+- Security: https://emaroautocare.pl/.well-known/security.txt

@@ -2,28 +2,57 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { BRAND } from '../brand'
-import { useDictionary } from '../../i18n/LocaleProvider'
+import { submitLead } from '../lib/submitLead'
+import { useDictionary, useLocale } from '../../i18n/LocaleProvider'
 import styles from './ContactSection.module.css'
 
-type FormState = { name: string; phone: string; service: string; comment: string; consent: boolean }
+type FormState = {
+  name: string
+  phone: string
+  service: string
+  comment: string
+  consent: boolean
+  website: string
+}
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
 export default function ContactSection() {
   const dict = useDictionary()
-  const [form, setForm] = useState<FormState>({ name: '', phone: '', service: '', comment: '', consent: false })
+  const locale = useLocale()
+  const [form, setForm] = useState<FormState>({
+    name: '',
+    phone: '',
+    service: '',
+    comment: '',
+    consent: false,
+    website: '',
+  })
   const [status, setStatus] = useState<Status>('idle')
 
   const set = (k: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const val = e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value
-    setForm(f => ({ ...f, [k]: val }))
+    setForm((f) => ({ ...f, [k]: val }))
+    if (status === 'error') setStatus('idle')
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!form.consent) return
     setStatus('loading')
-    await new Promise(r => setTimeout(r, 1400))
-    setStatus('success')
+    try {
+      await submitLead({
+        source: 'contact',
+        name: form.name,
+        phone: form.phone,
+        service: form.service,
+        comment: form.comment,
+        locale,
+        website: form.website,
+      })
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -69,14 +98,26 @@ export default function ContactSection() {
             ) : (
               <form className={styles.form} onSubmit={handleSubmit} noValidate>
                 <p className={styles.formTitle}>{dict.contact.formTitle}</p>
+                <div className={styles.honeypot} aria-hidden="true">
+                  <label htmlFor="company">Company</label>
+                  <input
+                    id="company"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={form.website}
+                    onChange={set('website')}
+                  />
+                </div>
                 <div className={styles.row}>
                   <div className={styles.field}>
                     <label htmlFor="name">{dict.contact.name}</label>
-                    <input id="name" type="text" placeholder={dict.contact.namePh} value={form.name} onChange={set('name')} required />
+                    <input id="name" type="text" placeholder={dict.contact.namePh} value={form.name} onChange={set('name')} required autoComplete="name" />
                   </div>
                   <div className={styles.field}>
                     <label htmlFor="phone">{dict.contact.phone}</label>
-                    <input id="phone" type="tel" placeholder={dict.contact.phonePh} value={form.phone} onChange={set('phone')} required />
+                    <input id="phone" type="tel" placeholder={dict.contact.phonePh} value={form.phone} onChange={set('phone')} required autoComplete="tel" />
                   </div>
                 </div>
                 <div className={styles.field}>
@@ -99,6 +140,7 @@ export default function ContactSection() {
                   <input type="checkbox" checked={form.consent} onChange={set('consent')} required />
                   <span>{dict.contact.consent}</span>
                 </label>
+                {status === 'error' && <p className={styles.error}>{dict.contact.error}</p>}
                 <button type="submit" className={styles.submit} disabled={!form.consent || status === 'loading'}>
                   {status === 'loading' ? dict.contact.submitting : dict.contact.submit}
                   {status !== 'loading' && (

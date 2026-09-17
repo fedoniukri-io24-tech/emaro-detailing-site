@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { absoluteUrl } from './seo'
+import { absoluteUrl, SITE_URL } from './seo'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,8 +9,18 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/'],
       },
+      {
+        userAgent: 'GPTBot',
+        allow: ['/llms.txt', '/'],
+        disallow: ['/api/'],
+      },
+      {
+        userAgent: 'Google-Extended',
+        allow: ['/llms.txt', '/'],
+        disallow: ['/api/'],
+      },
     ],
     sitemap: absoluteUrl('/sitemap.xml'),
-    host: absoluteUrl('/'),
+    host: SITE_URL,
   }
 }

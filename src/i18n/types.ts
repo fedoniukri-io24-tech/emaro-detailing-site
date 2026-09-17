@@ -113,6 +113,7 @@ export type Dictionary = {
     successTitle: string
     successText: string
     close: string
+    error: string
   }
   contact: {
     heading: string
@@ -136,6 +137,7 @@ export type Dictionary = {
     successTitle: string
     successText: string
     services: string[]
+    error: string
   }
   footer: {
     navLabel: string

@@ -1,0 +1,6 @@
+/* Team */
+Developer: TeleBots
+Site: https://emaroautocare.pl
+Contact: emaroautocare@gmail.com
+Language: pl, uk
+Standards: Next.js, semantic HTML, JSON-LD, Open Graph

@@ -144,6 +144,7 @@
 }
 
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -279,6 +280,26 @@
 .submit:disabled {
   opacity: 0.55;
   cursor: not-allowed;
+}
+
+.error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(180, 40, 40, 0.08);
+  border: 1px solid rgba(180, 40, 40, 0.22);
+  color: #8a1f1f;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .success {
