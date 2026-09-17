@@ -6,6 +6,8 @@ export type LeadPayload = {
   service?: string
   comment?: string
   locale?: string
+  pageUrl?: string
+  pagePath?: string
   website?: string
 }
 
@@ -13,7 +15,11 @@ export async function submitLead(payload: LeadPayload) {
   const response = await fetch('/api/lead', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({
+      ...payload,
+      pageUrl: typeof window !== 'undefined' ? window.location.href : payload.pageUrl,
+      pagePath: typeof window !== 'undefined' ? window.location.pathname : payload.pagePath,
+    }),
   })
 
   if (!response.ok) {
