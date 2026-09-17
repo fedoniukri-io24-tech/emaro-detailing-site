@@ -1,63 +1,185 @@
-.main {
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px var(--section-px) 80px;
-  background: var(--white);
+.page {
+  min-height: 100dvh;
+  background:
+    radial-gradient(ellipse 70% 55% at 78% 62%, rgba(var(--gold-rgb), 0.14), transparent 62%),
+    radial-gradient(ellipse 50% 40% at 18% 28%, rgba(255, 255, 255, 0.06), transparent 55%),
+    var(--charcoal);
+  color: var(--white);
+  overflow: hidden;
 }
 
-.inner {
-  max-width: 560px;
-  text-align: center;
+.main {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 1.05fr);
+  align-items: end;
+  gap: clamp(24px, 4vw, 48px);
+  padding: 120px var(--section-px) 0;
+}
+
+.glow {
+  position: absolute;
+  right: 8%;
+  bottom: 12%;
+  width: min(520px, 48vw);
+  height: min(220px, 28vw);
+  border-radius: 50%;
+  background: rgba(var(--gold-rgb), 0.18);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  align-items: flex-start;
+  gap: 18px;
+  max-width: 34rem;
+  padding-bottom: clamp(48px, 10vh, 120px);
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .code {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  margin: 0;
+  font-size: clamp(64px, 10vw, 120px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
   color: var(--gold);
+  text-shadow: 0 0 40px var(--gold-glow);
 }
 
 .heading {
+  margin: 0;
   font-size: var(--heading-page);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--charcoal);
+  font-weight: var(--font-weight-heading);
+  letter-spacing: var(--letter-tight);
+  line-height: 1.12;
+  color: var(--white);
 }
 
 .text {
-  font-size: 18px;
-  line-height: 1.65;
-  color: var(--dark-gray);
-  max-width: 42ch;
+  margin: 0;
+  font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 36ch;
 }
 
 .primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 12px;
+  gap: 10px;
+  margin-top: 8px;
   min-height: var(--btn-height);
   padding: 0 var(--btn-pad-x);
-  border: 1px solid var(--gold-border);
+  border: none;
   border-radius: var(--radius-pill);
-  background: var(--charcoal);
-  color: var(--white);
+  background: var(--gold);
+  color: var(--charcoal);
   font-size: var(--btn-font);
   font-weight: var(--btn-weight);
   letter-spacing: var(--btn-tracking);
   text-decoration: none;
-  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 10px 28px var(--gold-glow);
 }
 
 .primary:hover {
-  background: #1a1a1a;
-  border-color: rgba(var(--gold-rgb), 0.42);
-  transform: translateY(-1px);
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(var(--gold-rgb), 0.32);
+}
+
+.visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: min(70vh, 720px);
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.car {
+  width: min(100%, 760px);
+  height: auto;
+  object-fit: contain;
+  object-position: right bottom;
+  filter: drop-shadow(0 28px 60px rgba(0, 0, 0, 0.55));
+  transform: translateX(4%);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    padding: 100px var(--section-px) 0;
+    gap: 12px;
+  }
+
+  .copy {
+    align-items: center;
+    text-align: center;
+    max-width: none;
+    padding-bottom: 8px;
+  }
+
+  .text {
+    max-width: 34ch;
+  }
+
+  .visual {
+    min-height: auto;
+    justify-content: center;
+    margin-top: auto;
+  }
+
+  .car {
+    width: min(100%, 520px);
+    transform: none;
+  }
+
+  .glow {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 8%;
+    width: min(420px, 80vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .code {
+    font-size: clamp(56px, 18vw, 80px);
+  }
+
+  .heading {
+    font-size: clamp(28px, 8vw, 36px);
+  }
 }

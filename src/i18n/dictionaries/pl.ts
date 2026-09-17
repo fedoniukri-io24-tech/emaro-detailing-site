@@ -29,6 +29,7 @@ export const pl: Dictionary = {
     heading: 'Strona nie znaleziona',
     text: 'Wygląda na to, że ta strona nie istnieje lub została przeniesiona.',
     home: 'Strona główna',
+    imageAlt: 'Mustang z wyposażeniem detailingowym',
   },
   nav: {
       about: 'O nas',

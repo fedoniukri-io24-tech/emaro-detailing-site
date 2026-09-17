@@ -20,6 +20,7 @@ export type Dictionary = {
     heading: string
     text: string
     home: string
+    imageAlt: string
   }
   nav: {
     about: string

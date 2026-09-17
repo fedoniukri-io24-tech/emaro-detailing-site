@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import NotFoundContent from './components/NotFoundContent'
+import { BookingProvider } from './components/booking/BookingProvider'
 import { LocaleProvider } from '../i18n/LocaleProvider'
 import { getDictionarySync } from '../i18n/getDictionary'
 import { defaultLocale } from '../i18n/config'
@@ -20,7 +21,9 @@ export const metadata: Metadata = buildPageMetadata({
 export default function RootNotFound() {
   return (
     <LocaleProvider locale={defaultLocale} dict={dict}>
-      <NotFoundContent />
+      <BookingProvider>
+        <NotFoundContent />
+      </BookingProvider>
     </LocaleProvider>
   )
 }
