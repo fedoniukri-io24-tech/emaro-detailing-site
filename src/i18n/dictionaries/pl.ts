@@ -45,7 +45,7 @@ export const pl: Dictionary = {
     hero: {
       lines: ['Premium detailing', 'z dojazdem do Ciebie', 'w Warszawie'],
       accent: 'detailing',
-      pillars: ['Mycie', 'Wnętrze', 'Kabiny'],
+      pillars: ['Osobowy', 'bus', 'ciężarówka'],
       cardLabel: 'Warszawa i okolice',
       cardTitle: 'Podetailujemy Twoje auto?',
       cardSub: 'Przyjedziemy tam, gdzie Ci wygodnie',
@@ -82,50 +82,57 @@ export const pl: Dictionary = {
       ],
       items: {
         'cars-interior': {
-          title: 'Czyszczenie wnętrza',
+          title: 'Kompleksowe czyszczenie wnętrza',
           description:
-            'Odkurzamy wnętrze, myjemy plastiki, przecieramy panele i miejsca, do których trudno dojść. Żeby było naprawdę czysto, a nie „na odczepnego”.',
+            'Dokładne odkurzanie wnętrza, czyszczenie i pielęgnacja kokpitu oraz elementów plastikowych, mycie szyb od wewnątrz. Zadbamy również o każdy trudno dostępny zakamarek.',
           price: 'od 250 zł',
         },
         'cars-seats-leather': {
-          title: 'Fotele skórzane',
+          title: 'Fotel skórzany',
           description:
-            'Czyścimy skórę z brudu i osadów, potem dajemy ochronę — dłużej wygląda dobrze i mniej się brudzi.',
+            'Czyścimy skórę dedykowaną chemią, wykonujemy peeling i aplikujemy preparat pielęgnacyjno-ochronny. Dzięki temu skóra jest odżywiona, zabezpieczona i zachowuje swój wygląd na dłużej.',
           price: 'od 50 zł / fotel',
         },
         'cars-seats-fabric': {
-          title: 'Fotele materiałowe',
+          title: 'Fotel materiałowy',
           description:
-            'Pieremy materiał i ściągamy plamy — po kawie, jedzeniu czy zwykłym użytkowaniu. Bez wypalania koloru.',
+            'Profesjonalne czyszczenie tapicerki materiałowej z wykorzystaniem dedykowanych środków. Usuwamy zabrudzenia i plamy, odświeżając materiał oraz przywracając mu estetyczny wygląd.',
           price: 'od 60 zł / fotel',
         },
         'cars-exterior': {
           title: 'Mycie zewnętrzne',
           description:
-            'Myjemy nadwozie, felgi i opony w trzech etapach. Na koniec czernimy gumę — auto wygląda świeżo.',
+            'Wieloetapowe mycie nadwozia z wykorzystaniem profesjonalnej chemii. Dokładnie oczyszczamy karoserię, felgi i opony, a na koniec aplikujemy dressing na opony dla estetycznego wykończenia i ochrony.',
           price: 'od 150 zł',
         },
         'vans-interior': {
-          title: 'Wnętrze',
+          title: 'Kompleksowe czyszczenie wnętrza',
           description:
-            'Odkurzanie, plastiki, fotele. W busie osobowym i dostawczym zakres jest inny — cenę podamy po obejrzeniu.',
+            'Dokładne odkurzanie, czyszczenie i pielęgnacja kokpitu oraz elementów plastikowych. Mycie szyb od wewnątrz i dokładne oczyszczenie trudno dostępnych miejsc.',
           price: 'od 290 zł',
+        },
+        'vans-seats': {
+          title: 'Czyszczenie foteli',
+          description:
+            'Indywidualna wycena dopasowana do rodzaju pojazdu, liczby foteli oraz zakresu wymaganej pielęgnacji.',
+          price: 'wycena indywidualna',
         },
         'vans-exterior': {
           title: 'Mycie zewnętrzne',
-          description: 'Nadwozie, felgi, opony — to samo trzyetapowe mycie co przy osobówkach.',
+          description:
+            'Wieloetapowe mycie nadwozia z użyciem profesjonalnej chemii, dokładne czyszczenie felg i opon oraz aplikacja dressingu na opony. Czystość i perfekcyjne wykończenie każdego detalu.',
           price: 'od 150 zł',
         },
         'trucks-cabin': {
-          title: 'Kabina',
+          title: 'Kabina ciągnika siodłowego',
           description:
-            'Czyścimy wnętrze i sypialnię, myjemy kabinę z zewnątrz. Wszystko w jednej cenie.',
+            'Kompleksowe czyszczenie i pielęgnacja wnętrza – kokpitu, tapicerki i foteli. Dokładne pranie miejsca do spania oraz podsufitki. W cenie również mycie zewnętrzne kabiny.',
           price: '745 zł / kabina',
         },
         'trucks-full': {
           title: 'Kabina + naczepa',
           description:
-            'Kabina jak wyżej plus mycie naczepy. Jak naczep jest więcej — doliczamy.',
+            'Wszystko, co obejmuje usługa „Kabina ciągnika siodłowego” + mycie zewnętrzne naczepy. Przy większej liczbie naczep – indywidualna wycena.',
           price: '1105 zł / zestaw',
         },
       },
@@ -147,44 +154,49 @@ export const pl: Dictionary = {
       },
       items: {
         'cars-interior': {
-          title: 'Czyszczenie wnętrza',
+          title: 'Kompleksowe czyszczenie wnętrza',
           price: 'od 250 zł',
-          summary: 'Odkurzanie, plastiki, panele — wnętrze na gotowo.',
+          summary: 'Odkurzanie, kokpit, plastiki i szyby od wewnątrz.',
         },
         'cars-seats-leather': {
-          title: 'Fotele skórzane',
+          title: 'Fotel skórzany',
           price: 'od 50 zł / fotel',
-          summary: 'Czyszczenie skóry + ochrona na koniec.',
+          summary: 'Czyszczenie, peeling i preparat ochronny.',
         },
         'cars-seats-fabric': {
-          title: 'Fotele materiałowe',
+          title: 'Fotel materiałowy',
           price: 'od 60 zł / fotel',
-          summary: 'Pranie materiału i ściąganie plam.',
+          summary: 'Czyszczenie tapicerki i usuwanie plam.',
         },
         'cars-exterior': {
           title: 'Mycie zewnętrzne',
           price: 'od 150 zł',
-          summary: 'Nadwozie, felgi, opony — trzy etapy + czernienie gumy.',
+          summary: 'Wieloetapowe mycie + dressing na opony.',
         },
         'vans-interior': {
-          title: 'Wnętrze',
+          title: 'Kompleksowe czyszczenie wnętrza',
           price: 'od 290 zł',
-          summary: 'Odkurzanie, plastiki, fotele. Cena po obejrzeniu busa.',
+          summary: 'Odkurzanie, kokpit, plastiki i szyby od wewnątrz.',
+        },
+        'vans-seats': {
+          title: 'Czyszczenie foteli',
+          price: 'wycena indywidualna',
+          summary: 'Cena zależna od pojazdu, liczby foteli i zakresu.',
         },
         'vans-exterior': {
           title: 'Mycie zewnętrzne',
           price: 'od 150 zł',
-          summary: 'Nadwozie, felgi, opony — trzyetapowe mycie.',
+          summary: 'Wieloetapowe mycie + dressing na opony.',
         },
         'trucks-cabin': {
-          title: 'Kabina',
+          title: 'Kabina ciągnika siodłowego',
           price: '745 zł / kabina',
-          summary: 'Wnętrze, sypialnia i mycie z zewnątrz.',
+          summary: 'Wnętrze, sypialnia, podsufitka + mycie kabiny z zewnątrz.',
         },
         'trucks-full': {
           title: 'Kabina + naczepa',
           price: '1105 zł / zestaw',
-          summary: 'Kabina + mycie naczepy. Kilka naczep — osobno.',
+          summary: 'Kabina ciągnika + mycie naczepy. Kilka naczep — osobno.',
         },
       },
     },
@@ -290,12 +302,13 @@ export const pl: Dictionary = {
       successText: 'Skontaktujemy się z Tobą wkrótce.',
       services: [
         'Kompleksowe czyszczenie wnętrza — auto osobowe',
-        'Czyszczenie foteli skórzanych',
-        'Czyszczenie foteli materiałowych',
+        'Fotel skórzany',
+        'Fotel materiałowy',
         'Mycie zewnętrzne — auto osobowe',
         'Kompleksowe czyszczenie wnętrza — bus',
+        'Czyszczenie foteli — bus',
         'Mycie zewnętrzne — bus',
-        'Detailing kabiny ciężarówki',
+        'Detailing kabiny ciągnika siodłowego',
         'Kabina + naczepa',
         'Inne',
       ],

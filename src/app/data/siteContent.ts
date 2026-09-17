@@ -94,6 +94,13 @@ export const SERVICES: ServiceItem[] = [
     theme: 'dark',
   },
   {
+    id: 'vans-seats',
+    category: 'vans',
+    image: serviceImage('cars-seats-fabric.jpg'),
+    imagePosition: 'center 45%',
+    theme: 'photoAlt',
+  },
+  {
     id: 'vans-exterior',
     category: 'vans',
     image: serviceImage('vans-exterior.jpg'),
