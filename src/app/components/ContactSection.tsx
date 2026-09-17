@@ -99,10 +99,10 @@ export default function ContactSection() {
               <form className={styles.form} onSubmit={handleSubmit} noValidate>
                 <p className={styles.formTitle}>{dict.contact.formTitle}</p>
                 <div className={styles.honeypot} aria-hidden="true">
-                  <label htmlFor="company">Company</label>
+                  <label htmlFor="company">Leave blank</label>
                   <input
                     id="company"
-                    name="website"
+                    name="company_url"
                     type="text"
                     tabIndex={-1}
                     autoComplete="off"

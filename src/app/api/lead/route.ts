@@ -76,7 +76,11 @@ async function sendTelegramMessage(text: string) {
   const chatId = process.env.TELEGRAM_CHAT_ID?.trim()
 
   if (!token || !chatId) {
-    throw new Error('Telegram is not configured')
+    const missing = [
+      !token ? 'TELEGRAM_BOT_TOKEN' : null,
+      !chatId ? 'TELEGRAM_CHAT_ID' : null,
+    ].filter(Boolean)
+    throw new Error(`Telegram is not configured (missing ${missing.join(', ')})`)
   }
 
   const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
@@ -141,7 +145,12 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true })
   } catch (error) {
-    console.error('[lead]', error)
-    return NextResponse.json({ ok: false, error: 'server' }, { status: 500 })
+    const message = error instanceof Error ? error.message : 'server'
+    console.error('[lead]', message)
+    const isConfig = message.includes('not configured')
+    return NextResponse.json(
+      { ok: false, error: isConfig ? 'telegram_not_configured' : 'server' },
+      { status: 500 },
+    )
   }
 }

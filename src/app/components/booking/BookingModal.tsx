@@ -110,10 +110,10 @@ export default function BookingModal({
 
             <form className={styles.form} onSubmit={handleSubmit} noValidate>
               <div className={styles.honeypot} aria-hidden="true">
-                <label htmlFor="booking-company">Company</label>
+                <label htmlFor="booking-company">Leave blank</label>
                 <input
                   id="booking-company"
-                  name="website"
+                  name="company_url"
                   type="text"
                   tabIndex={-1}
                   autoComplete="off"

@@ -48,6 +48,13 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     statusBarStyle: 'black-translucent',
   },
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'geo.region': 'PL-MZ',
+    'geo.placename': 'Warszawa',
+    'geo.position': '52.2297;21.0122',
+    ICBM: '52.2297, 21.0122',
+  },
   alternates: {
     canonical: absoluteUrl('/pl'),
     languages: {
@@ -109,12 +116,6 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.webmanifest',
   ...(verification ? { verification } : {}),
-  other: {
-    'geo.region': 'PL-MZ',
-    'geo.placename': 'Warszawa',
-    'geo.position': '52.2297;21.0122',
-    ICBM: '52.2297, 21.0122',
-  },
 }
 
 export const viewport: Viewport = {
